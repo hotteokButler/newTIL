@@ -1,6 +1,6 @@
 # React-Router Start
 
-<button style="border-radius:4px;background:#c191ff;display:inline-block;padding:4px 8px;"><a href="I" style="color:#fff;font-size:1rem;font-weight:800;">React Router 공식문서</a></button>
+<a href="I" style="color:#fff;font-size:1rem;font-weight:800;">React Router 공식문서</a>
 
 ### Routing이란?
 
@@ -16,7 +16,7 @@
 
 2. BrowserRouter
 
-- HTML5의 <button style="border-radius:2px;background:##c191ff;display:inline-block;padding:2px 8px;"><a href="https://developer.mozilla.org/ko/docs/Web/API/History_API" style="color:#fff;">history API</a></button>를 활용한 라우터입니다. <br>
+- <a href="https://developer.mozilla.org/ko/docs/Web/API/History_API" style="color:#fff;">history API</a>를 활용한 라우터입니다. <br>
   ㄴ history API는 내부적으로 stack 자료구조의 형태 <br>
 - 별도의 서버 설정이 없다면 새로고침 시 404에러가 발생한다. <br>
   ㄴ 서버에는 기본 라우트 '/'만 저장 <br>
