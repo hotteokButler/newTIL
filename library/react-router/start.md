@@ -76,33 +76,33 @@ npm install react-router-dom @types/react-router-dom
       lazy?: LazyRouteFunction<RouteObject>;
     }
     ```
-    - 1. path
-      - 경로
-      - Dynamic Segment(":"으로 시작하는 것) useParams() API로 불러올 수 있음. 다수의 Dynamic Segment 사용 가능
-      - Optional Segments("?"으로 끝나는 것) useParams() API로 불러올 수 있음. router간 이동 시 optional segment는 생략해도 error component를 호출하지 않음, 여러번 호출 가능
-      - Splats ("/\*"으로 끝남 , catchcall 또는 star segments로 불림) , 앞부분만 만족하면 어떤 주소도 모두 허용
-      - 생략 시 UI layout을 위한 route
-    - 2. index
-      - default val : false
-      - true로 설정시 부모의 route path와 동일 url 가짐
-      - index router는 부모의 `<Outlet>`으로 랜더링
-    - 3. children
-      - 중첩 URL 사용 시
-      - `<Outlet>` 사용하여 child routes render 가능
-    - 4. caseSensitive
-      - 주소 정확 일치 여부 (true -> 대소문자구분 / false->대소문자 구분 안함)
-    - 5. loader
-      - route element/component가 렌더링 되기 전 실행
-      - 실행 return 값 => `useLoaderData()`로 제공 (loader 사용한 컴포넌트 보다 상위 컴포넌트에서는 호출 불가)
-      - createBrowserRouter과 같은 data router과 함께 사용
-      - 각 파일에 loader 함수 만든 후 export하여 사용하는 것이 일반적
-      - GET 요청 시 실행
-    - 6. action
-      - loader 속성이 페이지 render 되기 전이라면 action은 된 후, 특정 동작에 의해 실행
-      - Form, fetcher 또는 submission과 함께 사용
-    - 7. element , Component
-      - element : 페이지 렌더링
-       - Component : Component만 사용하여 페이지 렌더링
+    1. path
+        - 경로
+        - Dynamic Segment(":"으로 시작하는 것) useParams() API로 불러올 수 있음. 다수의 Dynamic Segment 사용 가능
+        - Optional Segments("?"으로 끝나는 것) useParams() API로 불러올 수 있음. router간 이동 시 optional segment는 생략해도 error component를 호출하지 않음, 여러번 호출 가능
+        - Splats ("/\*"으로 끝남 , catchcall 또는 star segments로 불림) , 앞부분만 만족하면 어떤 주소도 모두 허용
+        - 생략 시 UI layout을 위한 route
+    2. index
+        - default val : false
+        - true로 설정시 부모의 route path와 동일 url 가짐
+        - index router는 부모의 `<Outlet>`으로 랜더링
+    3. children
+        - 중첩 URL 사용 시
+        - `<Outlet>` 사용하여 child routes render 가능
+    4. caseSensitive
+        - 주소 정확 일치 여부 (true -> 대소문자구분 / false->대소문자 구분 안함)
+    5. loader
+        - route element/component가 렌더링 되기 전 실행
+        - 실행 return 값 => `useLoaderData()`로 제공 (loader 사용한 컴포넌트 보다 상위 컴포넌트에서는 호출 불가)
+        - createBrowserRouter과 같은 data router과 함께 사용
+        - 각 파일에 loader 함수 만든 후 export하여 사용하는 것이 일반적
+        - GET 요청 시 실행
+    6. action
+        - loader 속성이 페이지 render 되기 전이라면 action은 된 후, 특정 동작에 의해 실행
+        - Form, fetcher 또는 submission과 함께 사용
+    7. element , Component
+        - element : 페이지 렌더링
+        - Component : Component만 사용하여 페이지 렌더링
         ```jsx
         // element를 사용한 방법
         const router = createBrowserRouter([
@@ -125,7 +125,7 @@ npm install react-router-dom @types/react-router-dom
         - `useRouteError()`에서 확인 가능
 
 
-        
+
 ```jsx
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
