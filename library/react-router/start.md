@@ -118,7 +118,7 @@ npm install react-router-dom @types/react-router-dom
           },
         ]);
         ```
-     - 8. errorElement / ErrorBoundary
+     8. errorElement / ErrorBoundary
         - 렌더링 되어야 할 페이지 오류
         - loader / action 오류
         - 이상한 주소
