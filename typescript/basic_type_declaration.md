@@ -162,3 +162,28 @@
 
   const palyMaker = (name: string, age?: number): Player => (age ? { name, age } : { name });
   ```
+
+### Function
+
+- Function Parameter Type
+- Function Return Type
+- Function Structure Type
+- 반환 값에 타입을 정하지 않을 때는 `void` 사용
+
+  ```ts
+  const sum = (a: number, b: number): number => a + b;
+
+  const sum_log = (a: number, b: number): void => console.log(a + b);
+  ```
+
+- optional parameter 적용 가능 `Optional Parameter`설명 예시 코드 참고
+- default function parameter로 타입 추론 가능
+  ```ts
+  const makeName = (fname: string, lname = 'Smith') => fname + ' ' + lname;
+  const res = makeName('Jone'); // "Jone Smith'
+  const res2 = makeName('Jone','Chris'); // "Jone Chris"
+  ```
+- rest parameters 나머지 매개변수
+  ```ts
+    const makeName = (fname: string, ...rname: string[]) => fname + " " + rname.join(" ");
+  ```
