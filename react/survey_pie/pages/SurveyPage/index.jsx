@@ -1,9 +1,14 @@
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import ProgressIndicator from '../../src/components/ProgressIndicator';
 import QuestionBox from '../../src/components/QuestionBox';
 
 export default function SurveyPage() {
+  const { surveyId, step } = useParams();
+
+  console.log(surveyId, step);
+
   const questions = [
     {
       title: '질문1 입니다',
@@ -21,7 +26,7 @@ export default function SurveyPage() {
     },
   ];
 
-  const step = 1; // progress bar data
+  const stepState = parseInt(step); // progress bar data
 
   const [answers, setAnswers] = useState([]);
 
@@ -29,14 +34,14 @@ export default function SurveyPage() {
     <div>
       <ProgressIndicator />
       <QuestionBox
-        question={questions[step]}
+        question={questions[stepState]}
         questionsLength={questions.length}
-        step={step}
-        answer={answers[step]}
+        step={stepState}
+        answer={answers[stepState]}
         setAnswer={(newAnswer) => {
           setAnswers((prevAnswers) => {
             const newAnswers = [...prevAnswers];
-            newAnswers[step] = newAnswer;
+            newAnswers[stepState] = newAnswer;
             return newAnswers;
           });
         }}
