@@ -3,13 +3,13 @@ import Body from '../Body';
 import Desc from '../Desc';
 import Title from '../Title';
 
-export default function QuestoinBox() {
+export default function QuestoinBox({ question, questionsLength, step }) {
   return (
     <div>
-      <Title>타이틀</Title>
-      <Desc>설명</Desc>
-      <Body type={'text'} />
-      <ActionButtons />
+      <Title>{question.title}</Title>
+      <Desc>{question.desc}</Desc>
+      <Body type={question.type} />
+      <ActionButtons questionsLength={questionsLength} step={step} />
     </div>
   );
 }

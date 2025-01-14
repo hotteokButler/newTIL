@@ -18,11 +18,18 @@ function App() {
       optinos: {},
     },
   ];
+
+  const step = 1; // progress bar data
+
   return (
-    <>
+    <div id="survey_pie_app">
       <ProgressIndicator />
-      <QuestoinBox />
-    </>
+      <QuestoinBox
+        question={questions[step]}
+        questionsLength={questions.length}
+        step={step}
+      />
+    </div>
   );
 }
 
