@@ -3,7 +3,7 @@ import Body from '../Body';
 import Desc from '../Desc';
 import Title from '../Title';
 
-export default function QuestoinBox({ question, questionsLength, step }) {
+export default function QuestionBox({ question, questionsLength, step }) {
   return (
     <div>
       <Title>{question.title}</Title>

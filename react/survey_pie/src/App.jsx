@@ -1,5 +1,5 @@
 import ProgressIndicator from './components/ProgressIndicator';
-import QuestoinBox from './components/QuestionBox';
+import QuestionBox from './components/QuestionBox';
 
 function App() {
   const questions = [
@@ -24,7 +24,7 @@ function App() {
   return (
     <div id="survey_pie_app">
       <ProgressIndicator />
-      <QuestoinBox
+      <QuestionBox
         question={questions[step]}
         questionsLength={questions.length}
         step={step}
