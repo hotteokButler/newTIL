@@ -1,5 +1,5 @@
-import * as S from './CompletionPage.styled';
+import * as S from '../pageCommon.styled';
 
 export default function CompletionPage() {
-  return <S.CompletionPageWarpper>CompletionPage</S.CompletionPageWarpper>;
+  return <S.PageWarpper>CompletionPage</S.PageWarpper>;
 }

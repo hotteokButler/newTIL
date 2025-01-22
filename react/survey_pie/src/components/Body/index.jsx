@@ -1,8 +1,9 @@
-import TextInput from '../SelectInput';
+import SelectInput from '../SelectInput';
 import TextAreaInput from '../TextAreaInput';
-import SelectInput from '../TextInput';
+import TextInput from '../TextInput';
+import * as S from './Body.styled';
 
-export default function Body({ type, answer, setAnswer }) {
+export default function Body({ type, answer, setAnswer, options }) {
   let InputComponent = null;
 
   if (type === 'select') {
@@ -13,8 +14,8 @@ export default function Body({ type, answer, setAnswer }) {
     InputComponent = TextAreaInput;
   }
   return (
-    <>
-      <InputComponent answer={answer} setAnswer={setAnswer} />
-    </>
+    <S.Body>
+      <InputComponent answer={answer} setAnswer={setAnswer} options={options} />
+    </S.Body>
   );
 }

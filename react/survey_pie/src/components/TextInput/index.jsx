@@ -1,3 +1,16 @@
-export default function SelectInput({ children }) {
-  return <h1>{children}SelectInput</h1>;
+import * as S from './selectInput.styled';
+
+export default function TextInput({ answer, setAnswer, options }) {
+  return (
+    <S.TextInput
+      type="text"
+      name=""
+      id=""
+      placeholder={options.placeholder ? options.placeholder : ''}
+      value={answer ? answer : ''} // answer 없으면 공백 처리 필요 => 렌더링 이슈 발생
+      onChange={(e) => {
+        setAnswer(e.target.value);
+      }}
+    />
+  );
 }

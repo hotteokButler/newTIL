@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import ActionButtons from '../ActionButtons';
 import Body from '../Body';
 import Desc from '../Desc';
@@ -10,12 +13,25 @@ export default function QuestionBox({
   answer,
   setAnswer,
 }) {
-  return (
-    <div>
-      <Title>{question.title}</Title>
-      <Desc>{question.desc}</Desc>
-      <Body type={question.type} answer={answer} setAnswer={setAnswer} />
-      <ActionButtons questionsLength={questionsLength} step={step} />
-    </div>
-  );
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!question) navigate(-1);
+  }, []);
+
+  if (question) {
+    return (
+      <div>
+        <Title>{question.title}</Title>
+        <Desc>{question.desc}</Desc>
+        <Body
+          type={question.type}
+          answer={answer}
+          setAnswer={setAnswer}
+          options={question.options}
+        />
+        <ActionButtons questionsLength={questionsLength} step={step} />
+      </div>
+    );
+  }
 }

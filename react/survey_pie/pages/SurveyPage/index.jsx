@@ -3,26 +3,36 @@ import { useParams } from 'react-router-dom';
 
 import ProgressIndicator from '../../src/components/ProgressIndicator';
 import QuestionBox from '../../src/components/QuestionBox';
+import * as CS from '../pageCommon.styled';
 
 export default function SurveyPage() {
   const { surveyId, step } = useParams();
 
-  console.log(surveyId, step);
-
   const questions = [
     {
       title: '질문1 입니다',
-      dsect: '설명1 입니다',
+      desc: '설명1 입니다',
       type: 'text',
       required: false,
-      optinos: {},
+      options: {
+        placeholder: '10자 이내로 답해주세요.',
+      },
     },
     {
       title: '질문2 입니다',
-      dsect: '설명2 입니다',
-      type: 'text',
+      desc: '설명2 입니다',
+      type: 'select',
       required: false,
-      optinos: {},
+      options: {},
+    },
+    {
+      title: '질문3 입니다',
+      desc: '설명3 입니다',
+      type: 'textarea',
+      required: false,
+      options: {
+        placeholder: '400자 이내로 답해주세요.',
+      },
     },
   ];
 
@@ -31,21 +41,23 @@ export default function SurveyPage() {
   const [answers, setAnswers] = useState([]);
 
   return (
-    <div>
+    <>
       <ProgressIndicator />
-      <QuestionBox
-        question={questions[stepState]}
-        questionsLength={questions.length}
-        step={stepState}
-        answer={answers[stepState]}
-        setAnswer={(newAnswer) => {
-          setAnswers((prevAnswers) => {
-            const newAnswers = [...prevAnswers];
-            newAnswers[stepState] = newAnswer;
-            return newAnswers;
-          });
-        }}
-      />
-    </div>
+      <CS.PageWarpper>
+        <QuestionBox
+          question={questions[stepState]}
+          questionsLength={questions.length}
+          step={stepState}
+          answer={answers[stepState]}
+          setAnswer={(newAnswer) => {
+            setAnswers((prevAnswers) => {
+              const newAnswers = [...prevAnswers];
+              newAnswers[stepState] = newAnswer;
+              return newAnswers;
+            });
+          }}
+        />
+      </CS.PageWarpper>
+    </>
   );
 }

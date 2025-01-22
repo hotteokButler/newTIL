@@ -1,3 +1,5 @@
+import * as S from '../../../pages/pageCommon.styled';
+
 export default function Title({ children }) {
-  return <h1>{children}</h1>;
+  return <S.SurveyTitle>{children}</S.SurveyTitle>;
 }

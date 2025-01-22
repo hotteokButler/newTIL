@@ -1,3 +1,5 @@
+import * as S from '../../../pages/pageCommon.styled';
+
 export default function Desc({ children }) {
-  return <h4>{children}</h4>;
+  return <S.SurveyDesc>{children}</S.SurveyDesc>;
 }
