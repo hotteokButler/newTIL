@@ -1,11 +1,10 @@
-import { useParams } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
 import answersState from '../stores/answers/atom';
+import useStep from './useStep';
 
 export default function useCurrentAnswer() {
-  const params = useParams();
-  const step = parseInt(params.step);
+  const step = useStep();
 
   const [answers, setAnswers] = useRecoilState(answersState);
 
