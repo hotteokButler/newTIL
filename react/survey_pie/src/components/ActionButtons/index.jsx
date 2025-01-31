@@ -1,13 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 
-import Button from '../Button';
+import Button, { ButtonWrapper } from '../Button';
 
 export default function ActionButtons({ questionsLength, step }) {
   const navigate = useNavigate();
   const isLast = questionsLength - 1 === step;
 
   return (
-    <div>
+    <ButtonWrapper>
       {step === 0 || (
         <Button
           type="TERTIARY"
@@ -37,6 +37,6 @@ export default function ActionButtons({ questionsLength, step }) {
           다음
         </Button>
       )}
-    </div>
+    </ButtonWrapper>
   );
 }

@@ -34,6 +34,10 @@ const colorMap = {
   TERTIARY,
 };
 
+export const ButtonWrapper = styled.div`
+  text-align: center;
+`;
+
 const Button = styled.button`
   padding: 1rem 1.5rem;
   margin-right: 0.5rem;

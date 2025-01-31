@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 
 import ProgressIndicator from '../../src/components/ProgressIndicator';
 import QuestionBox from '../../src/components/QuestionBox';
-import * as CS from '../pageCommon.styled';
 
 export default function SurveyPage() {
   const { surveyId, step } = useParams();
@@ -44,22 +43,20 @@ export default function SurveyPage() {
 
   return (
     <>
-      <ProgressIndicator />
-      <CS.PageWarpper>
-        <QuestionBox
-          question={questions[stepState]}
-          questionsLength={questions.length}
-          step={stepState}
-          answer={answers[stepState]}
-          setAnswer={(newAnswer) => {
-            setAnswers((prevAnswers) => {
-              const newAnswers = [...prevAnswers];
-              newAnswers[stepState] = newAnswer;
-              return newAnswers;
-            });
-          }}
-        />
-      </CS.PageWarpper>
+      {/* <ProgressIndicator /> */}
+      <QuestionBox
+        question={questions[stepState]}
+        questionsLength={questions.length}
+        step={stepState}
+        answer={answers[stepState]}
+        setAnswer={(newAnswer) => {
+          setAnswers((prevAnswers) => {
+            const newAnswers = [...prevAnswers];
+            newAnswers[stepState] = newAnswer;
+            return newAnswers;
+          });
+        }}
+      />
     </>
   );
 }
