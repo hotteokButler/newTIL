@@ -2,9 +2,9 @@ import './assets/style/normalize.css';
 
 import { Route, Routes } from 'react-router-dom';
 
-import CompletionPage from '../pages/CompletionPage';
-import SurveyPage from '../pages/SurveyPage';
 import * as CS from './assets/style/main.styled';
+import CompletionPage from './pages/CompletionPage/index';
+import SurveyPage from './pages/SurveyPage';
 
 function App() {
   return (

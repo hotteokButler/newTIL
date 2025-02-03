@@ -7,7 +7,11 @@ import Title from '../Title';
 
 export default function QuestionBox() {
   const [answer, setAnswer] = useCurrentAnswer();
-  const question = useCurrentQuestion();
+  const question = useCurrentQuestion(); // 초기 값은 undefined
+
+  if (!question) {
+    return null;
+  }
 
   if (question) {
     return (

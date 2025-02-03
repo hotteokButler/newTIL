@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 
 import useStep from '../../hooks/useStep';
-import questionsLengthState from '../../stores/questions/questionsLengthState';
+import questionsLengthState from '../../stores/survey/questionsLengthState';
 import Button, { ButtonWrapper } from '../Button';
 
 export default function ActionButtons() {
