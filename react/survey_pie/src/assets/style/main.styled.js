@@ -17,6 +17,8 @@ export const SurveyPiePageWrapper = styled.div`
   width: 90%;
   max-width: 1024px;
   min-height: 550px;
+  max-height: 600px;
+  height: 75vw;
   padding: 6% 10%;
   box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.15);
   border-radius: 0.7rem;
