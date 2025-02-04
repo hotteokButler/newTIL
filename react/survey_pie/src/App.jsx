@@ -15,7 +15,7 @@ function App() {
             {/* 분리하게되면 부모 route 기준으로 usenavigate 상대 경로 지정 가능 */}
             <Route path=":step" element={<SurveyPage />} />
           </Route>
-          <Route path="/done" element={<CompletionPage />} />
+          <Route path="/done/:surveyId" element={<CompletionPage />} />
         </Routes>
       </CS.SurveyPiePageWrapper>
     </CS.SurveyPieWrapper>
