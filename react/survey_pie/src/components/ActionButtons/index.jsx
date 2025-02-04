@@ -14,7 +14,7 @@ export default function ActionButtons() {
   const surveyId = useSurveyId();
   const questionsLength = useRecoilValue(questionsLengthState);
   const isLast = questionsLength - 1 === step;
-  const [answers, setAnswers] = useAnswers();
+  const answers = useAnswers();
 
   return (
     <ButtonWrapper>
