@@ -14,7 +14,7 @@ export default function ActionButtons() {
   const surveyId = useSurveyId();
   const questionsLength = useRecoilValue(questionsLengthState);
   const isLast = questionsLength - 1 === step;
-  const answers = useAnswers();
+  const [answers, setAnswer] = useAnswers();
 
   return (
     <ButtonWrapper>
@@ -32,8 +32,14 @@ export default function ActionButtons() {
         <Button
           type="PRIMARY"
           onClick={() => {
-            postAnswers(surveyId, answers); // data 전달
-            navigate('/done');
+            postAnswers(surveyId, answers)
+              .then((res) => {
+                console.log(res);
+                navigate(`/done/${surveyId}`);
+              })
+              .catch((err) => {
+                console.log(err.response);
+              }); // data 전달
           }}
         >
           제출
