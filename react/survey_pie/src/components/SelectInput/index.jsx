@@ -3,10 +3,13 @@ import Item from './Item';
 export default function SelectInput({ answer = [], setAnswer, options }) {
   const handleChange = (isChecked, idx) => {
     if (isChecked) {
-      // setAnser(idex 추가)
+      const max = options?.max || 1;
+
+      if (answer.length >= max) return; // 선택 가능 옵션 크기보다 같을 경우 더 이상 선택되지 못하게 return;
+      // setAnswer(idex 추가)
       setAnswer([...answer, idx]);
     } else {
-      // setAnser(idex 제외)
+      // setAnswer(idex 제외)
       setAnswer(answer.filter((item) => item !== idx));
     }
   };
@@ -15,7 +18,11 @@ export default function SelectInput({ answer = [], setAnswer, options }) {
     <div>
       {options?.items &&
         options.items.map((elem, idx) => (
-          <Item key={idx} onChange={(e) => handleChange(e.target.checked, idx)}>
+          <Item
+            key={idx}
+            checked={answer.includes(idx)}
+            onChange={(e) => handleChange(e.target.checked, idx)}
+          >
             {elem}
           </Item>
         ))}
