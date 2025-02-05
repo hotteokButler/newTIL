@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 
@@ -11,6 +12,7 @@ import Button, { ButtonWrapper } from '../Button';
 export default function ActionButtons() {
   const navigate = useNavigate();
   let step = useStep();
+  const [isPosting, setIsPosting] = useState(false);
   const surveyId = useSurveyId();
   const questionsLength = useRecoilValue(questionsLengthState);
   const isLast = questionsLength - 1 === step;
@@ -32,17 +34,20 @@ export default function ActionButtons() {
         <Button
           type="PRIMARY"
           onClick={() => {
+            setIsPosting((prev) => !prev);
             postAnswers(surveyId, answers)
-              .then((res) => {
-                console.log(res);
+              .then(() => {
                 navigate(`/done/${surveyId}`);
               })
               .catch((err) => {
                 console.log(err.response);
+                alert('에러가 발생했습니다. 다시 시도해주세요');
+                setIsPosting((prev) => !prev);
               }); // data 전달
           }}
+          disabled={isPosting}
         >
-          제출
+          {isPosting ? '제출 중입니다...' : '제출'}
         </Button>
       ) : (
         <Button

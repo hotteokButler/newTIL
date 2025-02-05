@@ -79,6 +79,7 @@ const Button = styled.button`
       type === 'TERTIARY'
         ? `1px solid ${colorMap[type].BUTTON.DISABLED.BORDER}`
         : 'none'};
+    cursor: default;
   }
 `;
 
