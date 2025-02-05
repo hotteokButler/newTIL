@@ -1,7 +1,6 @@
 import * as S from './textAreaInput.styled';
 
 export default function TextAreaInput({ answer, setAnswer, options }) {
-  console.log(options);
   return (
     <S.TextAreaInput
       type="text"

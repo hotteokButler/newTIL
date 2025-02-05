@@ -17,7 +17,7 @@ export default function ActionButtons() {
   const surveyId = useSurveyId();
   const questionsLength = useRecoilValue(questionsLengthState);
   const isLast = questionsLength - 1 === step;
-  const [answers] = useAnswers();
+  const [answers, setAnswers] = useAnswers();
   const isRequired = useRequiredOption();
   const canMoveToNext = isRequired ? !answers[step]?.length : false;
 
@@ -40,6 +40,8 @@ export default function ActionButtons() {
             setIsPosting((prev) => !prev);
             postAnswers(surveyId, answers)
               .then(() => {
+                // 다시 제출하기 및 질문 처음으로 돌아가기전 초기화 필요
+                setAnswers([]);
                 navigate(`/done/${surveyId}`);
               })
               .catch((err) => {
