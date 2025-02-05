@@ -1,6 +1,7 @@
 import * as S from './textAreaInput.styled';
 
 export default function TextAreaInput({ answer, setAnswer, options }) {
+  console.log(options);
   return (
     <S.TextAreaInput
       type="text"
@@ -11,6 +12,7 @@ export default function TextAreaInput({ answer, setAnswer, options }) {
       onChange={(e) => {
         setAnswer(e.target.value);
       }}
+      {...(options?.max && { maxLength: options.max })}
     />
   );
 }
