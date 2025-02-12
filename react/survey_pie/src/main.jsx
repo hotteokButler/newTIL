@@ -6,7 +6,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 
 import App from './App.jsx';
-
 const root = createRoot(document.getElementById('root'));
 
 root.render(
