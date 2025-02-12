@@ -1,7 +1,7 @@
 import MainLayout from '../layouts/MainLayout';
 
 const ListPage = () => {
-  return <MainLayout>ListPage</MainLayout>;
+  return <MainLayout selectedKeys={['list']}>ListPage</MainLayout>;
 };
 
 export default ListPage;

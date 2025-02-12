@@ -1,14 +1,15 @@
 import { Button, Layout, Menu } from 'antd';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const { Header, Sider, Content } = Layout;
 
-const MainLayout = ({ children }) => {
+const MainLayout = ({ selectedKeys, children }) => {
   const [collapsed, setCollapsed] = useState(false);
   const items = [
     {
-      key: '1',
-      label: '설문 조사 관리',
+      key: 'list',
+      label: <Link to="/list">설문조사 관리</Link>,
     },
   ];
 
@@ -26,7 +27,7 @@ const MainLayout = ({ children }) => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={['1']}
+          selectedKeys={selectedKeys}
           items={items}
         />
       </Sider>
