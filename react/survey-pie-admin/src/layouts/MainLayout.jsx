@@ -11,6 +11,7 @@ const SurLayout = styled(Layout)`
 `;
 const SurContent = styled(Content)`
   padding: 1em;
+  background: #cbdcef61;
 `;
 const SurSiderLogo = styled.div`
   height: 32px;
