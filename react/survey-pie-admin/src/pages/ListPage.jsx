@@ -1,7 +1,42 @@
+import { Table } from 'antd';
 import useSwr from 'swr';
 
 import MainLayout from '../layouts/MainLayout';
 import fetcher from '../lib/fetcher';
+
+const columns = [
+  {
+    title: '번호',
+    dataIndex: 'id',
+    key: 'id',
+  },
+  {
+    title: '제목',
+    dataIndex: 'title',
+    key: 'title',
+  },
+  {
+    title: '생성일',
+    dataIndex: 'createdAt',
+    key: 'createdAt',
+    render: (_, { createdAt }) => {
+      const time = new Date(createdAt);
+      return `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDate()}`;
+    },
+  },
+  {
+    title: '액션',
+    dataIndex: 'id',
+    key: 'action',
+    render: (_, { id }) => {
+      return (
+        <button type="button" onClick={() => console.log(id, '삭제')}>
+          삭제
+        </button>
+      );
+    },
+  },
+];
 
 const ListPage = () => {
   /* 처음 요청 보낸 후 data가 떨어지는 기간동안에는 undefined 상태이며 data를 받게되면 다시 렌더링이 되며,
@@ -14,7 +49,16 @@ const ListPage = () => {
     return 'error';
   }
 
-  return <MainLayout selectedKeys={['list']}>ListPage</MainLayout>;
+  if (!data) return '...loading';
+
+  return (
+    <MainLayout selectedKeys={['list']}>
+      <Table
+        columns={columns}
+        dataSource={data.map((item) => ({ ...item, key: item.id }))}
+      />
+    </MainLayout>
+  );
 };
 
 export default ListPage;
