@@ -1,3 +1,4 @@
+import Body from '../Body';
 import Card from '../Card';
 
 const PreviewSection = ({ questions }) => {
@@ -7,7 +8,7 @@ const PreviewSection = ({ questions }) => {
     <div>
       {questions.map((card, idx) => (
         <Card key={idx} title={card.title} description={card.desc}>
-          Body
+          <Body type={card.type} options={card.options} />
         </Card>
       ))}
     </div>
