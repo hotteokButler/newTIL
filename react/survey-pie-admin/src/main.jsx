@@ -21,6 +21,7 @@ const node = (
     </BrowserRouter>
   </StrictMode>
 );
+
 const renderReact19ForAntdUse = (node, container) => {
   container._reactRoot ||= createRoot(container);
   const root = container._reactRoot;

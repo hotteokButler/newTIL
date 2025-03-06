@@ -1,20 +1,20 @@
 import { Radio } from 'antd';
-import { useEffect, useState } from 'react';
 
 function SelectInput({ options }) {
-  const [selectOptions, setSelectOptions] = useState(null);
-
-  useEffect(() => {
-    selectOptions ||
-      setSelectOptions(() =>
-        options.items.map((items) => ({
-          value: items,
-          label: items,
-        })),
-      );
-  }, [options]);
-
-  return <Radio.Group options={selectOptions} size="middle" />;
+  return (
+    <div>
+      {options &&
+        options.items.map((item, idx) => (
+          <Radio
+            key={idx}
+            value={item}
+            style={{ pointerEvents: 'none', display: 'block' }}
+          >
+            {item}
+          </Radio>
+        ))}
+    </div>
+  );
 }
 
 export default SelectInput;
