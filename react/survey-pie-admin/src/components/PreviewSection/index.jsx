@@ -1,7 +1,8 @@
+import AddButton from '../AddButton';
 import Body from '../Body';
 import Card from '../Card';
 
-const PreviewSection = ({ questions }) => {
+const PreviewSection = ({ questions, addQuestion }) => {
   if (!questions) return 'loading....😎';
 
   return (
@@ -11,6 +12,8 @@ const PreviewSection = ({ questions }) => {
           <Body type={card.type} options={card.options} />
         </Card>
       ))}
+
+      <AddButton onClick={addQuestion} />
     </div>
   );
 };
