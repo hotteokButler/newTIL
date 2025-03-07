@@ -76,6 +76,35 @@ const BuilderPage = () => {
                 }),
               );
             }}
+            handleQuestion={{
+              moveUpQuestion: (index) => {
+                if (index === 0) return;
+                setData(
+                  produce((draft) => {
+                    const temp = draft.questions[index];
+                    draft.questions[index] = draft.questions[index - 1];
+                    draft.questions[index - 1] = temp;
+                  }),
+                );
+              },
+              moveDownQuestion: (index) => {
+                if (index === data.questions.length - 1) return;
+                setData(
+                  produce((draft) => {
+                    const temp = draft.questions[index];
+                    draft.questions[index] = draft.questions[index + 1];
+                    draft.questions[index + 1] = temp;
+                  }),
+                );
+              },
+              deleteQuestion: (index) => {
+                setData(
+                  produce((draft) => {
+                    draft.questions.splice(index, 1);
+                  }),
+                );
+              },
+            }}
           />
         </Col>
         <Col flex="350px">
