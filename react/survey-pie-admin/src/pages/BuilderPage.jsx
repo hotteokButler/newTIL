@@ -53,10 +53,11 @@ const BuilderPage = () => {
             placeholder="설문 제목을 입력해 주세요."
             value={data.title}
             onChange={(e) => {
-              const newData = produce(data, (draft) => {
-                draft.title = e.target.value;
-              });
-              setData(newData);
+              setData(
+                produce((draft) => {
+                  draft.title = e.target.value;
+                }),
+              );
             }}
           />
           <PreviewSection
