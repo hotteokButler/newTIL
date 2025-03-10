@@ -1,10 +1,12 @@
 import { Col, Input, Row } from 'antd';
 import { produce } from 'immer';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import OptionSection from '../components/OptionSection';
 import PreviewSection from '../components/PreviewSection';
 import MainLayout from '../layouts/MainLayout';
+import { setTitle } from '../stores/survey/surveySlice';
 
 const BuilderPage = () => {
   const [data, setData] = useState({
@@ -44,6 +46,8 @@ const BuilderPage = () => {
     ],
     createdAt: 1647160914620,
   });
+  const surveyData = useSelector((state) => state.survey);
+  const dispatch = useDispatch();
 
   return (
     <MainLayout selectedKeys={['builder']}>
@@ -51,14 +55,8 @@ const BuilderPage = () => {
         <Col flex="auto">
           <Input
             placeholder="설문 제목을 입력해 주세요."
-            value={data.title}
-            onChange={(e) => {
-              setData(
-                produce((draft) => {
-                  draft.title = e.target.value;
-                }),
-              );
-            }}
+            value={surveyData.title}
+            onChange={(e) => dispatch(setTitle(e.target.value))}
           />
           <PreviewSection
             questions={data.questions}
