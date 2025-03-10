@@ -1,52 +1,19 @@
 import { Col, Input, Row } from 'antd';
-import { produce } from 'immer';
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import OptionSection from '../components/OptionSection';
 import PreviewSection from '../components/PreviewSection';
 import MainLayout from '../layouts/MainLayout';
-import { setTitle } from '../stores/survey/surveySlice';
+import {
+  addQuestion,
+  deleteQuestion,
+  moveDownQuestion,
+  moveUpQuestion,
+  setTitle,
+} from '../stores/survey/surveySlice';
 
 const BuilderPage = () => {
-  const [data, setData] = useState({
-    id: '1',
-    title: '명절 선물 선호도 조사',
-    questions: [
-      {
-        title: '설날에 받고 싶은 선물은 무엇인가요? (최대 3개)',
-        desc: '특별히 받고 싶은 선물이 없다면 선택하지 말고 넘어가세요.',
-        type: 'select',
-        required: true,
-        options: {
-          max: 3,
-          items: ['식품', '전자기기', '도서', '의류', '돈'],
-        },
-      },
-      {
-        title: '추석에 받고 싶은 선물은 무엇인가요?',
-        desc: '특별히 받고 싶은 선물이 없다면 입력하지 말고 넘어가세요.',
-        type: 'text',
-        required: false,
-        options: {
-          max: 10,
-          placeholder: '10자 이내로 입력해주세요.',
-        },
-      },
-      {
-        title: '입력한 선물을 받고 싶은 이유가 무엇인가요? (필수)',
-        desc: '',
-        type: 'textarea',
-        required: true,
-        options: {
-          max: 100,
-          placeholder: '100자 이내로 입력해주세요.',
-        },
-      },
-    ],
-    createdAt: 1647160914620,
-  });
-  const surveyData = useSelector((state) => state.survey);
+  const surveyData = useSelector((state) => state.survey); // store data 구독
   const dispatch = useDispatch();
 
   return (
@@ -59,48 +26,19 @@ const BuilderPage = () => {
             onChange={(e) => dispatch(setTitle(e.target.value))}
           />
           <PreviewSection
-            questions={data.questions}
-            addQuestion={() => {
-              setData(
-                produce((draft) => {
-                  draft.questions.push({
-                    title: 'Untitled',
-                    type: 'text',
-                    required: false,
-                    options: {
-                      max: 20,
-                    },
-                  });
-                }),
-              );
-            }}
+            questions={surveyData.questions}
+            addQuestion={() => dispatch(addQuestion())}
             handleQuestion={{
               moveUpQuestion: (index) => {
                 if (index === 0) return;
-                setData(
-                  produce((draft) => {
-                    const temp = draft.questions[index];
-                    draft.questions[index] = draft.questions[index - 1];
-                    draft.questions[index - 1] = temp;
-                  }),
-                );
+                dispatch(moveUpQuestion(index));
               },
               moveDownQuestion: (index) => {
-                if (index === data.questions.length - 1) return;
-                setData(
-                  produce((draft) => {
-                    const temp = draft.questions[index];
-                    draft.questions[index] = draft.questions[index + 1];
-                    draft.questions[index + 1] = temp;
-                  }),
-                );
+                if (index === surveyData.questions.length - 1) return;
+                dispatch(moveDownQuestion(index));
               },
               deleteQuestion: (index) => {
-                setData(
-                  produce((draft) => {
-                    draft.questions.splice(index, 1);
-                  }),
-                );
+                dispatch(deleteQuestion(index));
               },
             }}
           />
