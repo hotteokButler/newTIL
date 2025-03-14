@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import OptionSection from '../components/OptionSection';
 import PreviewSection from '../components/PreviewSection';
 import MainLayout from '../layouts/MainLayout';
-import fetchSurvey from '../services/getSurvey';
+import fetchSurvey from '../services/fetchSurvey';
 import {
   addQuestion,
   deleteQuestion,
