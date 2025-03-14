@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = { data: null };
+// store에는 loading 중인건지 error처리를 위한 값을 같이 설정해 둠
+const initialState = { data: null, loading: false, error: null };
 
 export const surveySlice = createSlice({
   name: 'survey',
@@ -52,6 +53,13 @@ export const surveySlice = createSlice({
     setSurvey: (state, action) => {
       state.data = action.payload;
     },
+    setLoading: (state, action) => {
+      state.loading = action.payload;
+    },
+
+    setError: (state, action) => {
+      state.error = action.payload;
+    },
   },
 });
 
@@ -63,6 +71,8 @@ export const {
   moveDownQuestion,
   deleteQuestion,
   setSurvey,
+  setLoading,
+  setError,
 } = surveySlice.actions;
 
 export default surveySlice.reducer;

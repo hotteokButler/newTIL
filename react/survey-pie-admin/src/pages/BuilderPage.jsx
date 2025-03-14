@@ -17,6 +17,8 @@ import {
 
 const BuilderPage = () => {
   const surveyData = useSelector((state) => state.survey.data); // store data 구독
+  const surveyLoading = useSelector((state) => state.survey.loading); // store loading 구독
+  const surveyError = useSelector((state) => state.survey.error); // store error 구독
   const dispatch = useDispatch();
   const { surveyId } = useParams();
 
@@ -25,7 +27,10 @@ const BuilderPage = () => {
     dispatch(fetchSurvey(surveyId));
   }, [dispatch, surveyId]);
 
-  if (!surveyData) return null;
+  if (surveyError) return 'error😩';
+
+  if (!surveyData || surveyLoading) return 'now loading...😎';
+
   return (
     <MainLayout selectedKeys={['builder']}>
       <Row gutter={[16, 16]}>
