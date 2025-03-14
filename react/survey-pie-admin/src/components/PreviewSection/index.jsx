@@ -22,7 +22,7 @@ const PreviewSection = ({ questions, addQuestion, handleQuestion }) => {
         </Card>
       ))}
 
-      <AddButton onClick={addQuestion} />
+      <AddButton addQuestion={addQuestion} />
     </PreviewSectionWrapper>
   );
 };

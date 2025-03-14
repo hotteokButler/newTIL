@@ -1,32 +1,60 @@
 import { PlusCircleOutlined } from '@ant-design/icons';
-import styled from 'styled-components';
+import { Popover } from 'antd';
+import { useState } from 'react';
 
-function AddButton({ onClick }) {
+import * as S from './addButton.styled';
+
+function AddButton({ addQuestion }) {
+  const [visible, setVisible] = useState(true);
+  const hide = () => {
+    setVisible(false);
+  };
+  const handleOpenChange = (newOpen) => {
+    setVisible(newOpen);
+  };
   return (
-    <AddButtonWrapper type="button" onClick={onClick}>
-      <PlusCircleOutlined />
-    </AddButtonWrapper>
+    <S.AddButtonWrapper type="button">
+      <Popover
+        placement="right"
+        content={
+          <S.PopoverButtonWrap>
+            <button
+              type="button"
+              onClick={() => {
+                addQuestion('select');
+                hide();
+              }}
+            >
+              객관식
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                addQuestion('text');
+                hide();
+              }}
+            >
+              단답식
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                addQuestion('textarea');
+                hide();
+              }}
+            >
+              서술식
+            </button>
+          </S.PopoverButtonWrap>
+        }
+        trigger="click"
+        open={visible}
+        onOpenChange={handleOpenChange}
+      >
+        <PlusCircleOutlined />
+      </Popover>
+    </S.AddButtonWrapper>
   );
 }
 
 export default AddButton;
-
-const AddButtonWrapper = styled.button`
-  font-size: 2.5rem;
-  border-radius: 50%;
-  background: #001628;
-  color: #e5ebf3;
-  cursor: pointer;
-  transition: 0.4s;
-  display: block;
-  text-align: center;
-  margin: 1em auto;
-  &:hover {
-    color: #fff;
-    background: #2f75d3;
-    transform: rotate(90deg);
-  }
-  span {
-    padding: 0.32em 0.2em;
-  }
-`;

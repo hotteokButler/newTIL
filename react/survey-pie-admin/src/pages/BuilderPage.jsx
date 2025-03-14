@@ -27,7 +27,7 @@ const BuilderPage = () => {
           />
           <PreviewSection
             questions={surveyData.questions}
-            addQuestion={() => dispatch(addQuestion())}
+            addQuestion={(type) => dispatch(addQuestion(type))}
             handleQuestion={{
               moveUpQuestion: (index) => {
                 if (index === 0) return;
