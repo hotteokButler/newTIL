@@ -39,6 +39,9 @@ export const CardWrapper = styled.div`
   border: 1px solid #ddd;
   background: #fff;
   max-width: 560px;
+  ${({ $isSelected }) =>
+    $isSelected && 'border : 3px solid tomato ; border-radius:0.2rem'};
+
   &:hover ${ButtonGroup} {
     left: calc(100% + 0.3rem);
     opacity: 1;

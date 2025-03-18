@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 
+import { setSelectedQuestionSlice } from '../../stores/selectedQuestion/selectedQuestionSlice';
 import {
   addQuestion,
   deleteQuestion,
@@ -13,6 +14,9 @@ import Card from '../Card';
 
 const PreviewSection = () => {
   const dispatch = useDispatch();
+  const selectedQuestionId = useSelector(
+    (state) => state.selectedQusetionId.data,
+  );
 
   const questions = useSelector((state) => state.survey.data?.questions); // store data 구독
 
@@ -31,6 +35,10 @@ const PreviewSection = () => {
     addQuestion: (type) => dispatch(addQuestion(type)),
   };
 
+  const handleCardClick = (index) => {
+    dispatch(setSelectedQuestionSlice(index));
+  };
+
   if (!questions) return 'loading....😎';
 
   return (
@@ -38,11 +46,14 @@ const PreviewSection = () => {
       {questions.map((card, idx) => (
         <Card
           key={idx}
+          index={idx}
           title={card.title}
           description={card.desc}
           onUpButtonClick={() => handleQuestion.moveUpQuestion(idx)}
           onDownButtonClick={() => handleQuestion.moveDownQuestion(idx)}
           onDeleteButtonClick={() => handleQuestion.deleteQuestion(idx)}
+          onCardClick={handleCardClick}
+          isSelected={selectedQuestionId === idx}
         >
           <Body type={card.type} options={card.options} />
         </Card>

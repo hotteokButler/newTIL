@@ -5,19 +5,22 @@ import * as S from './card.styled';
 
 function Card({
   title,
+  index,
   description,
   children,
   onUpButtonClick,
   onDownButtonClick,
   onDeleteButtonClick,
+  onCardClick,
+  isSelected,
 }) {
   return (
-    <S.CardWrapper>
-      <S.Head>
+    <S.CardWrapper $isSelected={isSelected}>
+      <S.Head onClick={() => onCardClick(index)}>
         <S.Title>{title}</S.Title>
         {description && <S.Desc>{description}</S.Desc>}
       </S.Head>
-      <S.Body>{children}</S.Body>
+      <S.Body onClick={() => onCardClick(index)}>{children}</S.Body>
 
       <S.ButtonGroup>
         <Button type="text" onClick={onUpButtonClick} icon={<UpOutlined />} />

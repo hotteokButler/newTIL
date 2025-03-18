@@ -10,7 +10,7 @@ const SurLayout = styled(Layout)`
   min-height: 100vh;
 `;
 const SurContent = styled(Content)`
-  padding: 1em;
+  padding: ${({ $padding }) => $padding + 'px' || '0'};
   background: #cbdcef61;
 `;
 const SurSiderLogo = styled.div`
@@ -19,7 +19,7 @@ const SurSiderLogo = styled.div`
   background: rgba(255, 255, 255, 0.3);
 `;
 
-const MainLayout = ({ selectedKeys, children }) => {
+const MainLayout = ({ selectedKeys, children, padding }) => {
   const [collapsed, setCollapsed] = useState(false);
   const items = [
     {
@@ -44,7 +44,7 @@ const MainLayout = ({ selectedKeys, children }) => {
         <Header>
           <Button type="text" onClick={() => setCollapsed(!collapsed)} />
         </Header>
-        <SurContent>{children}</SurContent>
+        <SurContent $padding={padding}>{children}</SurContent>
       </Layout>
     </SurLayout>
   );

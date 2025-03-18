@@ -26,12 +26,12 @@ const BuilderPage = () => {
 
   return (
     <MainLayout selectedKeys={['builder']}>
-      <Row gutter={[16, 16]}>
-        <Col flex="auto">
+      <Row gutter={[16, 16]} style={{ height: '100%' }}>
+        <Col flex="auto" style={{ padding: '1em' }}>
           <BuilderTitleInput />
           <PreviewSection />
         </Col>
-        <Col flex="350px">
+        <Col flex="350px" style={{ height: '100%' }}>
           <OptionSection />
         </Col>
       </Row>
