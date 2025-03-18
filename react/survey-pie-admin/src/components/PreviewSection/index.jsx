@@ -1,10 +1,36 @@
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 
+import {
+  addQuestion,
+  deleteQuestion,
+  moveDownQuestion,
+  moveUpQuestion,
+} from '../../stores/survey/surveySlice';
 import AddButton from '../AddButton';
 import Body from '../Body';
 import Card from '../Card';
 
-const PreviewSection = ({ questions, addQuestion, handleQuestion }) => {
+const PreviewSection = () => {
+  const dispatch = useDispatch();
+
+  const questions = useSelector((state) => state.survey.data?.questions); // store data 구독
+
+  const handleQuestion = {
+    moveUpQuestion: (index) => {
+      if (index === 0) return;
+      dispatch(moveUpQuestion(index));
+    },
+    moveDownQuestion: (index) => {
+      if (index === questions.length - 1) return;
+      dispatch(moveDownQuestion(index));
+    },
+    deleteQuestion: (index) => {
+      dispatch(deleteQuestion(index));
+    },
+    addQuestion: (type) => dispatch(addQuestion(type)),
+  };
+
   if (!questions) return 'loading....😎';
 
   return (
@@ -22,7 +48,7 @@ const PreviewSection = ({ questions, addQuestion, handleQuestion }) => {
         </Card>
       ))}
 
-      <AddButton addQuestion={addQuestion} />
+      <AddButton addQuestion={handleQuestion.addQuestion} />
     </PreviewSectionWrapper>
   );
 };
