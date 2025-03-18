@@ -5,7 +5,6 @@ import * as S from './card.styled';
 
 function Card({
   title,
-  index,
   description,
   children,
   onUpButtonClick,
@@ -16,11 +15,11 @@ function Card({
 }) {
   return (
     <S.CardWrapper $isSelected={isSelected}>
-      <S.Head onClick={() => onCardClick(index)}>
+      <S.Head onClick={onCardClick}>
         <S.Title>{title}</S.Title>
         {description && <S.Desc>{description}</S.Desc>}
       </S.Head>
-      <S.Body onClick={() => onCardClick(index)}>{children}</S.Body>
+      <S.Body onClick={onCardClick}>{children}</S.Body>
 
       <S.ButtonGroup>
         <Button type="text" onClick={onUpButtonClick} icon={<UpOutlined />} />

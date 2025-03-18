@@ -52,7 +52,7 @@ const PreviewSection = () => {
           onUpButtonClick={() => handleQuestion.moveUpQuestion(idx)}
           onDownButtonClick={() => handleQuestion.moveDownQuestion(idx)}
           onDeleteButtonClick={() => handleQuestion.deleteQuestion(idx)}
-          onCardClick={handleCardClick}
+          onCardClick={() => handleCardClick(idx)}
           isSelected={selectedQuestionId === idx}
         >
           <Body type={card.type} options={card.options} />

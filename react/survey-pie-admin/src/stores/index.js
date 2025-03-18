@@ -10,8 +10,5 @@ export default configureStore({
     survey: surveyReducer,
     selectedQusetionId: selectedQuestionReducer,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: false,
-    }).concat(thunk),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
 });
