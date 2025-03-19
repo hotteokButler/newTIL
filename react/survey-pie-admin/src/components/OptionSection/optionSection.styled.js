@@ -25,3 +25,16 @@ export const NoQuestion = styled.div`
   font-weight: bold;
   color: #dcbfbf;
 `;
+
+export const FormWrapper = styled.div`
+  padding: 1em;
+`;
+
+export const FormSubTitle = styled.div`
+  font-size: 1.25em;
+  font-weight: bold;
+  padding: 0 0 1em;
+`;
+export const ItemWrapper = styled.div`
+  padding: 0 0 2em;
+`;
