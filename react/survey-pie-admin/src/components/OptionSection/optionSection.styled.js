@@ -37,4 +37,26 @@ export const FormSubTitle = styled.div`
 `;
 export const ItemWrapper = styled.div`
   padding: 0 0 2em;
+  min-height: 85px;
+`;
+
+export const SubmitButton = styled.div`
+  margin: 5em 0 2em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 80px;
+  button {
+    padding: 0.7em 1.2em;
+    background: #7e8da7;
+    border-radius: 0.2rem;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      background: #004fd9;
+    }
+  }
 `;

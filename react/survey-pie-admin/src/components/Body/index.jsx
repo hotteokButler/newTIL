@@ -11,6 +11,8 @@ function Body({ type, options }) {
     Component = <TextAreaInput options={options} />;
   } else if (type === 'select') {
     Component = <SelectInput options={options} />;
+  } else {
+    return null;
   }
   return Component;
 }

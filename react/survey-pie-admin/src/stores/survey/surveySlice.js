@@ -34,6 +34,10 @@ export const surveySlice = createSlice({
         options,
       });
     },
+    setQusetion: (state, action) => {
+      const { index, data } = action.payload;
+      state.data.questions[index] = data;
+    },
     moveUpQuestion: (state, action) => {
       const index = action.payload;
       const temp = state.data.questions[index];
@@ -67,6 +71,7 @@ export const surveySlice = createSlice({
 export const {
   setTitle,
   addQuestion,
+  setQusetion,
   moveUpQuestion,
   moveDownQuestion,
   deleteQuestion,
