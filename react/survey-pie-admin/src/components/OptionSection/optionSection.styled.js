@@ -30,6 +30,7 @@ export const FormWrapper = styled.div`
   padding: 1em;
 `;
 
+export const FormCon = styled.div``;
 export const FormSubTitle = styled.div`
   font-size: 1.25em;
   font-weight: bold;
