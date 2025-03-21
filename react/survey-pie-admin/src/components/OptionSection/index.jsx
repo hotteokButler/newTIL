@@ -9,6 +9,7 @@ import * as S from './optionSection.styled';
 
 const { Item } = Form;
 
+// 공통 옵션
 const fieldGroups = [
   {
     title: '공통 옵션',
@@ -30,6 +31,22 @@ const fieldGroups = [
   },
 ];
 
+// 공통옵션 type별 input render
+const setInputByFieldType = (type, requiredState, handleRequiredStateFn) => {
+  if (type === 'text') {
+    return <Input />;
+  } else if (type === 'switch') {
+    return (
+      <SwitchToggle
+        isChecked={requiredState}
+        handleToggleSwitch={handleRequiredStateFn}
+      />
+    );
+  } else {
+    return null;
+  }
+};
+
 const OptionSection = () => {
   const selectedQusetionId = useSelector(
     (state) => state.selectedQusetionId.data,
@@ -43,7 +60,9 @@ const OptionSection = () => {
   const dispatch = useDispatch();
 
   const [form] = Form.useForm();
-  const [toggleState, setToggleState] = useState(false);
+  const [toggleState, setToggleState] = useState(
+    question ? question.required : false,
+  );
 
   const onFieldFinish = (values) => {
     dispatch(
@@ -60,21 +79,6 @@ const OptionSection = () => {
 
   const handleToggleSwitch = () => {
     setToggleState((prev) => !prev);
-    console.log(toggleState);
-  };
-  const setInputByFieldType = (type) => {
-    if (type === 'text') {
-      return <Input />;
-    } else if (type === 'switch') {
-      return (
-        <SwitchToggle
-          isChecked={toggleState}
-          handleToggleSwitch={handleToggleSwitch}
-        />
-      );
-    } else {
-      return null;
-    }
   };
 
   useEffect(() => {
@@ -86,6 +90,7 @@ const OptionSection = () => {
     });
     setToggleState(question.required);
   }, [form, question]);
+
   return (
     <S.OptionSectionWrapper>
       <S.OptionTitle>문항 옵션</S.OptionTitle>
@@ -108,7 +113,11 @@ const OptionSection = () => {
                   {group.fields.map((field, f_idx) => (
                     <S.ItemWrapper key={f_idx}>
                       <Item layout="vertical" {...field}>
-                        {setInputByFieldType(field.type)}
+                        {setInputByFieldType(
+                          field.type,
+                          toggleState,
+                          handleToggleSwitch,
+                        )}
                       </Item>
                     </S.ItemWrapper>
                   ))}
