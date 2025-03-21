@@ -137,8 +137,6 @@ const OptionSection = () => {
       type: question.type,
     };
 
-    console.log(newValues);
-
     dispatch(
       setQusetion({
         index: selectedQusetionId,
