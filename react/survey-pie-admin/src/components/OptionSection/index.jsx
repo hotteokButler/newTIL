@@ -183,7 +183,7 @@ const OptionSection = () => {
     ? [
         ...fieldGroups,
         {
-          title: '세부옵션,',
+          title: '세부옵션',
           fields: detailFieldsMap[question.type],
         },
       ]
