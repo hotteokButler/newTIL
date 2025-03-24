@@ -12,8 +12,8 @@ function PutSurveyButton() {
   return (
     <FloatingButton>
       <button type="button" onClick={() => putSurvey(survey)}>
-        저장
         <FileAddFilled />
+        저장
       </button>
     </FloatingButton>
   );
@@ -45,7 +45,7 @@ const FloatingButton = styled.div`
       transform: translateY(-10px);
     }
     span {
-      margin-left: 4px;
+      margin-right: 4px;
     }
   }
 `;
