@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import BuilderTitleInput from '../components/BuilderTitleInput';
 import OptionSection from '../components/OptionSection';
 import PreviewSection from '../components/PreviewSection';
+import PutSurveyButton from '../components/PutSurveyButton';
 import MainLayout from '../layouts/MainLayout';
 import fetchSurvey from '../services/fetchSurvey';
 
@@ -34,6 +35,7 @@ const BuilderPage = () => {
         <Col flex="350px" style={{ height: '100%' }}>
           <OptionSection />
         </Col>
+        <PutSurveyButton />
       </Row>
     </MainLayout>
   );
