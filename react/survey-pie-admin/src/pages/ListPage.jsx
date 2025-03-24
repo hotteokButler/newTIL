@@ -1,3 +1,4 @@
+import { DeleteFilled, PlusCircleFilled } from '@ant-design/icons';
 import { Table } from 'antd';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -5,6 +6,7 @@ import useSwr from 'swr';
 
 import MainLayout from '../layouts/MainLayout';
 import fetcher from '../lib/fetcher';
+import * as S from './pages.styled';
 
 const PAGE_SIZE = 20;
 
@@ -34,9 +36,12 @@ const columns = [
     key: 'action',
     render: (_, { id }) => {
       return (
-        <button type="button" onClick={() => console.log(id, '삭제')}>
-          삭제
-        </button>
+        <S.ListDeleteButton
+          type="button"
+          onClick={() => console.log(id, '삭제')}
+        >
+          <DeleteFilled />
+        </S.ListDeleteButton>
       );
     },
   },
@@ -57,6 +62,11 @@ const ListPage = () => {
 
   return (
     <MainLayout selectedKeys={['list']}>
+      <S.ListAddButtonWrap>
+        <S.ListAddButton>
+          <PlusCircleFilled /> 새로운 설문 생성
+        </S.ListAddButton>
+      </S.ListAddButtonWrap>
       <Table
         onRow={({ id }) => {
           return {
@@ -66,6 +76,7 @@ const ListPage = () => {
           };
         }}
         columns={columns}
+        style={{ padding: '0 1rem' }}
         pagination={{
           position: ['bottomCenter'],
           total: data.length,
