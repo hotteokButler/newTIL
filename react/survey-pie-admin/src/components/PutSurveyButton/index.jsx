@@ -2,7 +2,7 @@ import { FileAddFilled } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-import putSurvey from '../../services/putServey';
+import putSurvey from '../../services/putSurvey';
 
 function PutSurveyButton() {
   const survey = useSelector((state) => state.survey.data); // store loading 구독

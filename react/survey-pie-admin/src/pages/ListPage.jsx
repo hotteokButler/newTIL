@@ -6,6 +6,7 @@ import useSwr from 'swr';
 
 import MainLayout from '../layouts/MainLayout';
 import fetcher from '../lib/fetcher';
+import deleteSurvey from '../services/deleteSurvey';
 import * as S from './pages.styled';
 
 const PAGE_SIZE = 20;
@@ -34,11 +35,14 @@ const columns = [
     title: '액션',
     dataIndex: 'id',
     key: 'action',
-    render: (_, { id }) => {
+    render: (_, record) => {
       return (
         <S.ListDeleteButton
           type="button"
-          onClick={() => console.log(id, '삭제')}
+          onClick={(e) => {
+            e.stopPropagation();
+            deleteSurvey(record);
+          }}
         >
           <DeleteFilled />
         </S.ListDeleteButton>
@@ -63,7 +67,11 @@ const ListPage = () => {
   return (
     <MainLayout selectedKeys={['list']}>
       <S.ListAddButtonWrap>
-        <S.ListAddButton>
+        <S.ListAddButton
+          onClick={() => {
+            navigate('/builder');
+          }}
+        >
           <PlusCircleFilled /> 새로운 설문 생성
         </S.ListAddButton>
       </S.ListAddButtonWrap>

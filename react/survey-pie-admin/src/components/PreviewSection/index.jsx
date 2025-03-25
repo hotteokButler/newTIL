@@ -39,25 +39,24 @@ const PreviewSection = () => {
     dispatch(setSelectedQuestionSlice(index));
   };
 
-  if (!questions) return 'loading....😎';
-
   return (
     <PreviewSectionWrapper>
-      {questions.map((card, idx) => (
-        <Card
-          key={idx}
-          index={idx}
-          title={card.title}
-          description={card.desc}
-          onUpButtonClick={() => handleQuestion.moveUpQuestion(idx)}
-          onDownButtonClick={() => handleQuestion.moveDownQuestion(idx)}
-          onDeleteButtonClick={() => handleQuestion.deleteQuestion(idx)}
-          onCardClick={() => handleCardClick(idx)}
-          isSelected={selectedQuestionId === idx}
-        >
-          <Body type={card.type} options={card.options} />
-        </Card>
-      ))}
+      {questions &&
+        questions.map((card, idx) => (
+          <Card
+            key={idx}
+            index={idx}
+            title={card.title}
+            description={card.desc}
+            onUpButtonClick={() => handleQuestion.moveUpQuestion(idx)}
+            onDownButtonClick={() => handleQuestion.moveDownQuestion(idx)}
+            onDeleteButtonClick={() => handleQuestion.deleteQuestion(idx)}
+            onCardClick={() => handleCardClick(idx)}
+            isSelected={selectedQuestionId === idx}
+          >
+            <Body type={card.type} options={card.options} />
+          </Card>
+        ))}
 
       <AddButton addQuestion={handleQuestion.addQuestion} />
     </PreviewSectionWrapper>

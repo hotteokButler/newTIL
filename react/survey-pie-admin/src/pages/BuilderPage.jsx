@@ -18,7 +18,7 @@ const BuilderPage = () => {
 
   useEffect(() => {
     //rendering 될 때마다 실행되지 않게 useEffect안에서 호출
-    dispatch(fetchSurvey(surveyId));
+    surveyId && dispatch(fetchSurvey(surveyId));
   }, [dispatch, surveyId]);
 
   if (surveyError) return 'error😩';
