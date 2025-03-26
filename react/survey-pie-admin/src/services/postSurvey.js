@@ -6,7 +6,9 @@ const postSurvey = (survey, navigate) => {
     .then((res) => {
       if (res.status === 201) {
         alert('정상적으로 저장이 완료되었습니다😎');
-        navigate(`/builder/${res.data.id}`);
+        navigate
+          ? navigate(`/builder/${res.data.id}`)
+          : window.location.replace(`/builder/${res.data.id}`);
       }
     })
     .catch((err) => {
