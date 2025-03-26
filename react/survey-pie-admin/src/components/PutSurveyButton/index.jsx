@@ -1,17 +1,27 @@
 import { FileAddFilled } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
+import postSurvey from '../../services/postSurvey';
 import putSurvey from '../../services/putSurvey';
 
 function PutSurveyButton() {
   const survey = useSelector((state) => state.survey.data); // store loading 구독
+  const navigate = useNavigate();
 
   if (!survey) return null;
 
+  const isEditPage = !!survey.id;
+
   return (
     <FloatingButton>
-      <button type="button" onClick={() => putSurvey(survey)}>
+      <button
+        type="button"
+        onClick={() => {
+          isEditPage ? putSurvey(survey) : postSurvey(survey, navigate);
+        }}
+      >
         <FileAddFilled />
         저장
       </button>
