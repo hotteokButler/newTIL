@@ -8,7 +8,6 @@ const deleteSurvey = (survey) => {
     axios
       .delete(`/surveys/${survey.id}`)
       .then((res) => {
-        console.log(res);
         res.status === 200 && alert('정상적으로 삭제가 완료되었습니다😎');
       })
       .catch((err) => {
