@@ -1,4 +1,4 @@
-# 📘 Next.js 사전 렌더링 (Pre Rendering) 완전 정리
+# 📘 Next.js 사전 렌더링 (Pre Rendering)
 
 ## 1. 사전 렌더링 (Pre Rendering)이란?
 
