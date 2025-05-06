@@ -167,9 +167,4 @@
 
 ### 인용
 
-> [Next.js]: https://it.wikipedia.org/wiki/Next.js?utm_source=chatgpt.com
-> [Next.js Documentation]: https://nextjs.org/docs?utm_source=chatgpt.com
-> [Building Your Application: Routing - Next.js]: https://nextjs.org/docs/app/building-your-application/routing?utm_source=chatgpt.com
-> [Next.js Quickstart (App Router) - Clerk]: https://clerk.com/docs/quickstarts/nextjs?utm_source=chatgpt.com
-> [시리즈 | Next.js - App Router - mjieun]: https://velog.io/%40mjieun/series/Next.js-App-Router?utm_source=chatgpt.com
-> [Introduction: App Router - Next.js]: https://nextjs.org/docs/app?utm_source=chatgpt.com
+> [Next.js](https://it.wikipedia.org/wiki/Next.js?utm_source=chatgpt.com) <br> > [Next.js Documentation](https://nextjs.org/docs?utm_source=chatgpt.com) <br> > [Building Your Application: Routing - Next.js](https://nextjs.org/docs/app/building-your-application/routing?utm_source=chatgpt.com) <br> > [Next.js Quickstart (App Router) - Clerk](https://clerk.com/docs/quickstarts/nextjs?utm_source=chatgpt.com) <br> > [시리즈 | Next.js - App Router - mjieun](https://velog.io/%40mjieun/series/Next.js-App-Router?utm_source=chatgpt.com) <br> > [Introduction: App Router - Next.js](https://nextjs.org/docs/app?utm_source=chatgpt.com) <br> > [한입 크기로 배우는 Next.js ](https://www.inflearn.com/course/%ED%95%9C%EC%9E%85-%ED%81%AC%EA%B8%B0-nextjs)<br>
