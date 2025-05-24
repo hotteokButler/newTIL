@@ -21,9 +21,9 @@
       v
 [Server (Next.js)]
       |
-      | ↓ 미리 렌더링된 HTML + JS Bundle
+      | ↓ 미리 렌더링(자바스크립트 코드-react component-를 html로 변환하는 과정)된 HTML + JS Bundle
       v
-[Browser 화면 렌더링]
+[Browser 화면 렌더링(html 코드를 브러우저가 화면에 그러내는 작업)]
       |
       | ↓ JS Hydration
       v
