@@ -12,6 +12,8 @@
     about.js       → '/about'
     blog/
       [id].js      → '/blog/:id'
+    /item
+      index.js     → '/blog/item'
   ```
 
 - **동적 라우팅**: 대괄호 `[]`를 사용하여 동적 경로를 설정할 수 있음.
