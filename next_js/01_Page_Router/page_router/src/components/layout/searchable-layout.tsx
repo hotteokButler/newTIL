@@ -21,7 +21,7 @@ export default function SearchableLayout({ children }: { children: React.ReactNo
 	const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
-		if (search.length < 1) return;
+		if (search.length < 1 || search == q) return;
 
 		router.push(`/search?q=${search}`);
 	};
