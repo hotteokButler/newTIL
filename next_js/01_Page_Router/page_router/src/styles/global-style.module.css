@@ -1,0 +1,38 @@
+@charset 'utf-8';
+
+.main_wrapper {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	max-width: 600px;
+	min-height: 100vh;
+	background: #fff;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.main_header {
+	border-bottom: 1px solid #eee;
+}
+.main_header a {
+	height: 50px;
+	line-height: 50px;
+	padding: 0.5rem 1rem;
+	font-size: 1.2rem;
+	font-weight: bold;
+	letter-spacing: -0.02em;
+}
+
+.main_content {
+	flex: auto;
+	padding: 1rem;
+}
+
+.main_footer {
+	height: 70px;
+	line-height: 70px;
+	padding: 0.5rem 1rem;
+	border-top: 1px solid #eee;
+	font-size: 0.8rem;
+	color: #cdcdcd;
+	font-weight: bold;
+}
