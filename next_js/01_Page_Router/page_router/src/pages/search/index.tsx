@@ -1,11 +1,20 @@
 import { useRouter } from 'next/router';
 
-export default function Page() {
+import SearchableLayout from '@/components/layout/searchable-layout';
+import type { NextPageWithLayout } from '../_app';
+
+const Page: NextPageWithLayout = () => {
 	const router = useRouter();
 
 	const { q } = router.query;
 
 	console.log(q);
 
-	return <div>Search Page</div>;
-}
+	return <p>Search Page</p>;
+};
+
+Page.getLayout = function getLayout(page: React.ReactNode) {
+	return <SearchableLayout>{page}</SearchableLayout>;
+};
+
+export default Page;
