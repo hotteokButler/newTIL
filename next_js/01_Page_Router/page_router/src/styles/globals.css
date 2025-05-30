@@ -130,6 +130,16 @@ table {
 	border-spacing: 0;
 }
 
+button,
+input,
+select,
+option {
+	border: none;
+	outline: none;
+	background: none;
+	display: inline-block;
+}
+
 a {
 	display: block;
 	text-decoration: none;

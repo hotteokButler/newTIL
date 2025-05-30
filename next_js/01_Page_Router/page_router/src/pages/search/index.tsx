@@ -10,7 +10,7 @@ const Page: NextPageWithLayout = () => {
 
 	console.log(q);
 
-	return <p>Search Page</p>;
+	return <p>Search {q}</p>;
 };
 
 Page.getLayout = function getLayout(page: React.ReactNode) {

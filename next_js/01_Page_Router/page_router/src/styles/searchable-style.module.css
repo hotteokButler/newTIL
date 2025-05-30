@@ -3,4 +3,40 @@
 .search_input_wrap {
 	width: 100%;
 	margin-bottom: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.search_input_wrap input[type='text'] {
+	border-radius: 0.2rem;
+	border: 1px solid #efefef;
+	line-height: 2rem;
+	padding: 0.2rem 1rem 0.1rem;
+	flex: auto;
+}
+.search_input_wrap input[type='text']:active,
+.search_input_wrap input[type='text']:focus {
+	border-color: var(--primary-color50);
+	box-shadow: inset 2px 2px 0px var(--primary-color50);
+}
+
+.search_input_wrap input[type='text']::placeholder {
+	color: #ddd;
+}
+.search_input_wrap button {
+	background: var(--primary-color);
+	line-height: 2.4rem;
+	padding: 0 1.5rem;
+	border-radius: 0.2rem;
+	font-weight: bold;
+	cursor: pointer;
+}
+.search_input_wrap button:hover {
+	background: var(--primary-color50);
+	color: #fff;
+}
+.search_input_wrap button:active {
+	background: var(--primary-color90);
+	color: #fff;
 }
