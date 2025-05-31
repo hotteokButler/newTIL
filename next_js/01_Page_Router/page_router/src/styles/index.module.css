@@ -1,0 +1,13 @@
+@charset 'utf-8';
+
+.container_wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+.container_wrap section {
+}
+.container_wrap h3 {
+	font-size: 1.2rem;
+	font-weight: bold;
+}
