@@ -1,0 +1,47 @@
+@charset 'utf-8';
+
+.book_item_card {
+	align-items: center;
+	gap: 1.5em;
+	display: flex;
+	padding: 1rem 0.5rem;
+}
+.book_item_card:not(:last-child) {
+	border-bottom: 1px solid #efefef;
+}
+.book_item_card:hover {
+	box-shadow: 0 0 0 4px var(--primary-color10);
+	color: var(--primary-color90);
+}
+.book_item_card:hover dd:last-child {
+	color: var(--primary-color90);
+}
+.book_item_card:first-child {
+	margin-top: 0;
+}
+
+.book_item_card img {
+	width: 20%;
+	min-width: 6rem;
+	border: 1px solid #eee;
+}
+.book_item_card dl {
+	flex: auto;
+	overflow: hidden;
+}
+.book_item_card dt {
+	font-weight: bold;
+}
+.book_item_card dd {
+	margin-bottom: 0.4em;
+	font-size: 0.9rem;
+}
+.book_item_card dd:nth-child(2) {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.book_item_card dd:last-child {
+	margin-bottom: 0;
+	color: #ababab;
+}
