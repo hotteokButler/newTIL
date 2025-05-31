@@ -5,6 +5,7 @@
 	gap: 1.5em;
 	display: flex;
 	padding: 1rem 0.5rem;
+	border-radius: 0.2rem;
 }
 .book_item_card:not(:last-child) {
 	border-bottom: 1px solid #efefef;
