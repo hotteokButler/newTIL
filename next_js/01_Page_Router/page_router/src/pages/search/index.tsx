@@ -1,7 +1,9 @@
 import SearchableLayout from '@/components/layout/searchable-layout';
-import type { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
-import style from '@/styles/index.module.css';
 import fetchBooks from '@/lib/fetch-books';
+import BookItem from '@/components/book-item';
+import style from '@/styles/index.module.css';
+
+import type { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
 	const q = context.query.q as string;
@@ -16,16 +18,10 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
 };
 
 const Page = ({ books }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-	console.log(books);
-
 	return (
 		<div className={style.container_wrap}>
-			{/* 지금 추천하는 도서 ====== */}
-			<section>
-				{/* {randomBooks.map((book) => (
-					<BookItem key={book.id} {...book} />
-				))} */}
-			</section>
+			{/* 검색 결과 ====== */}
+			<section>{books.length > 0 ? books.map((book) => <BookItem key={book.id} {...book} />) : <h5 className={style.no_list}>검색 결과가 존재하지 않습니다...🥲</h5>}</section>
 		</div>
 	);
 };
