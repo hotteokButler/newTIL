@@ -1,21 +1,33 @@
-import { useRouter } from 'next/router';
-
 import SearchableLayout from '@/components/layout/searchable-layout';
 import type { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
+import style from '@/styles/index.module.css';
+import searchBook from '@/lib/search-book';
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
 	const q = context.query.q;
-	console.log('search query:', q);
+
+	const books = await searchBook(q);
 
 	return {
 		props: {
-			q,
+			books,
 		},
 	};
 };
 
-const Page = ({ q }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-	return <p>Search {q}</p>;
+const Page = ({ books }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+	console.log(books);
+
+	return (
+		<div className={style.container_wrap}>
+			{/* 지금 추천하는 도서 ====== */}
+			<section>
+				{/* {randomBooks.map((book) => (
+					<BookItem key={book.id} {...book} />
+				))} */}
+			</section>
+		</div>
+	);
 };
 
 Page.getLayout = function getLayout(page: React.ReactNode) {
