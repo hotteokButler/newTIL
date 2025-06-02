@@ -6,6 +6,8 @@ import style from '../styles/index.module.css';
 import books from '@/mock/mock.json';
 import BookItem from '@/components/book-item';
 
+export const getServerSideProps = () => {};
+
 const Home: NextPageWithLayout = () => {
 	return (
 		<div className={style.container_wrap}>
