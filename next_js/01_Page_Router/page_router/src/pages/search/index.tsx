@@ -1,15 +1,20 @@
 import { useRouter } from 'next/router';
 
 import SearchableLayout from '@/components/layout/searchable-layout';
-import type { NextPageWithLayout } from '../_app';
+import type { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 
-const Page: NextPageWithLayout = () => {
-	const router = useRouter();
+export const getServerSideProps = async (context: GetServerSidePropsContext) => {
+	const q = context.query.q;
+	console.log('search query:', q);
 
-	const { q } = router.query;
+	return {
+		props: {
+			q,
+		},
+	};
+};
 
-	console.log(q);
-
+const Page = ({ q }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
 	return <p>Search {q}</p>;
 };
 
