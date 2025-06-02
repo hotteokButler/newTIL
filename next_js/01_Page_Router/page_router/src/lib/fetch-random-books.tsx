@@ -1,7 +1,7 @@
 import { IBookData } from '@/type/types';
 
-export default async function fetchBooks(): Promise<IBookData[]> {
-	const url = `${process.env.NEXT_PUBLIC_DB_HOST}/book`;
+export default async function fetchRandomBooks(): Promise<IBookData[]> {
+	const url = `${process.env.NEXT_PUBLIC_DB_HOST}/book/random`;
 
 	try {
 		const res = await fetch(url);

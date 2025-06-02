@@ -1,30 +1,32 @@
 import SearchableLayout from '@/components/layout/searchable-layout';
-import type { NextPageWithLayout } from './_app';
 
 import style from '../styles/index.module.css';
 
-import books from '@/mock/mock.json';
 import BookItem from '@/components/book-item';
 import { InferGetServerSidePropsType } from 'next';
 
-export const getServerSideProps = () => {
-	const data = 'hello';
+import fetchBooks from '@/lib/fetch-books';
+import fetchRandomBooks from '@/lib/fetch-random-books';
+
+export const getServerSideProps = async () => {
+	const allBooks = await fetchBooks();
+	const randomBooks = await fetchRandomBooks();
+
 	return {
 		props: {
-			data,
+			allBooks,
+			randomBooks,
 		},
 	};
 };
 
-const Home: NextPageWithLayout = ({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-	console.log(data);
-
+const Home = ({ allBooks, randomBooks }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
 	return (
 		<div className={style.container_wrap}>
 			{/* 지금 추천하는 도서 ====== */}
 			<section>
 				<h3>지금 추천하는 도서</h3>
-				{books.map((book) => (
+				{randomBooks.map((book) => (
 					<BookItem key={book.id} {...book} />
 				))}
 			</section>
@@ -32,7 +34,7 @@ const Home: NextPageWithLayout = ({ data }: InferGetServerSidePropsType<typeof g
 			{/* 등록된 모든 도서 ====== */}
 			<section>
 				<h3>등록된 모든 도서</h3>
-				{books.map((book) => (
+				{allBooks.map((book) => (
 					<BookItem key={book.id} {...book} />
 				))}
 			</section>
