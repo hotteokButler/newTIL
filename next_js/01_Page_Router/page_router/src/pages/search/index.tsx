@@ -1,12 +1,12 @@
 import SearchableLayout from '@/components/layout/searchable-layout';
 import type { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import style from '@/styles/index.module.css';
-import searchBook from '@/lib/search-book';
+import fetchBooks from '@/lib/fetch-books';
 
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
-	const q = context.query.q;
+	const q = context.query.q as string;
 
-	const books = await searchBook(q);
+	const books = await fetchBooks(q);
 
 	return {
 		props: {

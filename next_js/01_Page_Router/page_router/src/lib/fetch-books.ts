@@ -1,7 +1,11 @@
 import { IBookData } from '@/type/types';
 
-export default async function fetchBooks(): Promise<IBookData[]> {
-	const url = `${process.env.NEXT_PUBLIC_DB_HOST}/book`;
+export default async function fetchBooks(q?: string): Promise<IBookData[]> {
+	let url = `${process.env.NEXT_PUBLIC_DB_HOST}/book`;
+
+	if (q) {
+		url += `/search?q=${q}`;
+	}
 
 	try {
 		const res = await fetch(url);
