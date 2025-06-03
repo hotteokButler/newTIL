@@ -3,13 +3,14 @@ import SearchableLayout from '@/components/layout/searchable-layout';
 import style from '../styles/index.module.css';
 
 import BookItem from '@/components/book-item';
-import { InferGetServerSidePropsType } from 'next';
+import { InferGetStaticPropsType } from 'next';
 
 import fetchBooks from '@/lib/fetch-books';
 import fetchRandomBooks from '@/lib/fetch-random-books';
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
 	const [allBooks, randomBooks] = await Promise.all([fetchBooks(), fetchRandomBooks()]);
+	console.log('index page');
 
 	return {
 		props: {
@@ -19,7 +20,7 @@ export const getServerSideProps = async () => {
 	};
 };
 
-const Home = ({ allBooks, randomBooks }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Home = ({ allBooks, randomBooks }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (
 		<div className={style.container_wrap}>
 			{/* 지금 추천하는 도서 ====== */}

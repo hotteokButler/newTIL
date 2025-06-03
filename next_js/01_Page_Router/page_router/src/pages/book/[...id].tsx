@@ -19,6 +19,8 @@ export default function Page({ bookDetail }: InferGetServerSidePropsType<typeof 
 
 	const { id, title, subTitle, description, author, publisher, coverImgUrl } = bookDetail;
 
+	console.log(id);
+
 	return (
 		<main className={style.book_detail_wrap}>
 			<div className={style.book_detail_img} style={{ backgroundImage: `url('${coverImgUrl}')` }}>

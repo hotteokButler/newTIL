@@ -1,5 +1,16 @@
 @charset 'utf-8';
 
+:root {
+	--primary-color: #7def89;
+	--primary-color10: #c5f3c9;
+	--primary-color50: #2ac039;
+	--primary-color90: #086a11;
+	--secondary-color: #ffb950;
+	--secondary-color10: #fcd395;
+	--secondary-color50: #dc901e;
+	--secondary-color90: #8c5606;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
