@@ -5,7 +5,7 @@ import fetchOneBook from '@/lib/fetch-one-book';
 export const getStaticPaths = () => {
 	return {
 		paths: [{ params: { id: ['1'] } }, { params: { id: ['2'] } }, { params: { id: ['3'] } }],
-		fallback: 'blocking',
+		fallback: true,
 	};
 };
 
