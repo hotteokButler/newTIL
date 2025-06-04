@@ -1,18 +1,11 @@
 import style from '@/styles/book-detail.module.css';
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import fetchOneBook from '@/lib/fetch-one-book';
-import fetchBooks from '@/lib/fetch-books';
 
-export const getStaticPaths = async () => {
-	const books = await fetchBooks();
-
-	const paths = books.map((book) => ({
-		params: { id: [String(book.id)] },
-	}));
-
+export const getStaticPaths = () => {
 	return {
-		paths,
-		fallback: false,
+		paths: [{ params: { id: ['1'] } }, { params: { id: ['2'] } }, { params: { id: ['3'] } }],
+		fallback: 'blocking',
 	};
 };
 
