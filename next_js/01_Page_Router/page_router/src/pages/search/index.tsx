@@ -3,21 +3,27 @@ import fetchBooks from '@/lib/fetch-books';
 import BookItem from '@/components/book-item';
 import style from '@/styles/index.module.css';
 
-import type { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import type { IBookData } from '@/type/types';
 
-export const getServerSideProps = async (context: GetServerSidePropsContext) => {
-	const q = context.query.q as string;
+const Page = () => {
+	const [books, setBooks] = useState<IBookData[]>([]);
 
-	const books = await fetchBooks(q);
+	const router = useRouter();
+	const q = router.query.q;
 
-	return {
-		props: {
-			books,
-		},
+	const fetchSearchResult = async () => {
+		const data = await fetchBooks(q as string);
+		setBooks(data);
 	};
-};
 
-const Page = ({ books }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+	useEffect(() => {
+		if (q) {
+			fetchSearchResult();
+		}
+	}, [q]);
+
 	return (
 		<div className={style.container_wrap}>
 			{/* 검색 결과 ====== */}
