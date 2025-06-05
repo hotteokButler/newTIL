@@ -26,13 +26,21 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 export default function Page({ bookDetail }: InferGetStaticPropsType<typeof getStaticProps>) {
 	const router = useRouter();
 
-	if (router.isFallback) return '...로딩중입니다🌀';
+	if (router.isFallback) {
+		return (
+			<>
+				<Head>
+					<meta name='description' content='한입 북스에 등록된 도서들을 만나보세요' />
+					<title>ONEBITE BOOKS</title>
+				</Head>
+				<h2>...로딩중입니다🌀</h2>
+			</>
+		);
+	}
 
 	if (!bookDetail) return '문제가 발생했습니다 다시 시도해주세요';
 
-	const { id, title, subTitle, description, author, publisher, coverImgUrl } = bookDetail;
-
-	console.log(id);
+	const { title, subTitle, description, author, publisher, coverImgUrl } = bookDetail;
 
 	return (
 		<>
