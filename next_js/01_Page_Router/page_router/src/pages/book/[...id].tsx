@@ -2,6 +2,7 @@ import style from '@/styles/book-detail.module.css';
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import fetchOneBook from '@/lib/fetch-one-book';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 export const getStaticPaths = () => {
 	return {
@@ -34,21 +35,29 @@ export default function Page({ bookDetail }: InferGetStaticPropsType<typeof getS
 	console.log(id);
 
 	return (
-		<main className={style.book_detail_wrap}>
-			<div className={style.book_detail_img} style={{ backgroundImage: `url('${coverImgUrl}')` }}>
-				<img src={coverImgUrl} alt={`${title} | ${author}`} />
-			</div>
-			{/* 상세 내용 시작 ====== */}
-			<div className={style.book_detail_con}>
-				<h3>
-					<div>{title}</div>
-					<span>{subTitle}</span>
-					<span>
-						{author} | {publisher}
-					</span>
-				</h3>
-				<pre>{description}</pre>
-			</div>
-		</main>
+		<>
+			{/* seo meta tag ======= START ===== */}
+			<Head>
+				<meta name='description' content={`한입북스 | ${title} | ${author}`} />
+				<title>{`${title} | ${author}`}</title>
+			</Head>
+			{/* seo meta tag =======  END  ===== */}
+			<main className={style.book_detail_wrap}>
+				<div className={style.book_detail_img} style={{ backgroundImage: `url('${coverImgUrl}')` }}>
+					<img src={coverImgUrl} alt={`${title} | ${author}`} />
+				</div>
+				{/* 상세 내용 시작 ====== */}
+				<div className={style.book_detail_con}>
+					<h3>
+						<div>{title}</div>
+						<span>{subTitle}</span>
+						<span>
+							{author} | {publisher}
+						</span>
+					</h3>
+					<pre>{description}</pre>
+				</div>
+			</main>
+		</>
 	);
 }
