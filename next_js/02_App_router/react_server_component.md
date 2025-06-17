@@ -87,6 +87,7 @@
 
 ### 📚 인용 (References)
 
+- [한 입 크기로 잘라먹는 Next.js(v15) 강의 | 이정환 Winterlood](https://www.inflearn.com/course/%ED%95%9C%EC%9E%85-%ED%81%AC%EA%B8%B0-nextjs)
 - [React Server Components – 공식 문서](https://react.dev/reference/rsc/server-components?utm_source=chatgpt.com)
 - [Server Components vs. Client Components in Next.js: Differences … – DEV.to](https://dev.to/oskarinmix/server-components-vs-client-components-in-nextjs-differences-pros-and-cons-389f?utm_source=chatgpt.com)
 - [Understanding React Server Components – Vercel 블로그](https://vercel.com/blog/understanding-react-server-components?utm_source=chatgpt.com)
