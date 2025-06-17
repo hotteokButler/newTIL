@@ -42,7 +42,9 @@
 | **초기 로딩 성능**                              | 우수 - 번들 작고 즉시 HTML 스트리밍             | 하이드레이션 필요, 로딩 지연 가능                                         |
 | **사용 시기**                                   | 데이터 중심 UI, SEO, 성능/보안 중요시 할 때     | 사용자 상호작용, 동적 UI 처리 필요할 때                                   |
 
-    - 페이지 대부분을 `Server Component`로 구성할 것 권장, `Client Component`는 꼭 필요한 경우에만 사용할 것
+> - 페이지 대부분을 `Server Component`로 구성할 것 권장, `Client Component`는 꼭 필요한 경우에만 사용할 것
+> - 상호작용이 필요하면 `Client Component`로 만들기
+>   - ex: input, programtic하게 이동시킬 때 등등
 
 ## 5. RSC 장단점
 
