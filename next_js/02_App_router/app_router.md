@@ -71,3 +71,11 @@ app/
 - **Private 폴더** (`_folderName`): 라우터 제외용, 내부 모듈 저장 용도
 - **Route 그룹** (`(folder)`): URL 경로에 포함되지 않고 코드 구조만 정리
 - **src 폴더 사용**: `/src/app` 또는 `/src/pages` 구조 가능하며, `/public`과 설정 파일은 루트 유지 .
+
+<br/>
+<br/>
+
+## 4.추가 정리
+
+- static page : 데이터의 업데이트가 추가로 필요하지 앖으므로 pre-fetching으로 RSC paylod + js 번들 둘 다 불러옴
+- dynamic page : 데이터의 향후 업데이트가 필요할 수 있으므로 RSC payload만 pre-fethcing 후 실제 페이지 이동이 발생했을 때 js 번들 가져오도록 설정
