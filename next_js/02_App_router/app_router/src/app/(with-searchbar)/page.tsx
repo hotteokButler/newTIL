@@ -1,5 +1,5 @@
+import getBookItems from '@/api/get-book-items';
 import BookItem from '@/components/book-item';
-import getBookItems from '@/util/get-book-items';
 
 import style from './page.module.css';
 
