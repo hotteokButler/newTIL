@@ -9,6 +9,7 @@ const getBookItems = async (param?: string): Promise<BookData[] | void> => {
 		}
 		const books = await res.json();
 		return books;
+		2;
 	} catch (error) {
 		console.log('Error:', error);
 	}
