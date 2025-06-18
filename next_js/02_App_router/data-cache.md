@@ -93,6 +93,8 @@ fetch('https://api...', { next: { tags: ['user', 'posts'] } });
 revalidateTag('posts'); // 관련 cache 한 번에 무효화
 ```
 
+- on-Demand Revalidate
+- 요청이 들어왔을 때 데이터를 최신화 함
 - 캐시 항목에 태그 지정 → revalidateTag()로 그룹 무효화 가능.
 
 #### ✅ 경로 기반 무효화
