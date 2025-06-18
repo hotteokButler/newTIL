@@ -20,7 +20,7 @@
 
 ### 2‑1. `fetch` 캐싱 옵션 - 오직 fetch 메서드에서만 활용 가능
 
-#### `cache: 'no-store` : default 옵션
+#### (1) `cache: 'no-store` : default 옵션
 
 ```ts
 fetch('https://api...', { cache: 'no-store' });
@@ -29,7 +29,7 @@ fetch('https://api...', { cache: 'no-store' });
 - 데이터 페칭의 결과를 저장하지 않는 옵션
 - 요청마다 항상 네트워크에서 최신 데이터 fetch.
 
-#### `cache: 'force-cache`
+#### (2)`cache: 'force-cache`
 
 ```ts
 fetch('https://api...', { cache: 'force-cache' });
@@ -38,7 +38,17 @@ fetch('https://api...', { cache: 'force-cache' });
 - 요청의 결과를 무조건 캐싱함
 - 한번 호출 된 이후에는 다시 호출하지 않음
 
-#### `cache: 'reload`
+```text
+              [Next server                                    ] [ 백엔드 서버 ]
+              [사전 렌더링                     ] [ 데이터 캐시]
+
+[접속요청] → [fetch('url',{cache:'force-cache'})] → [ miss ] → |
+[html] ←--------------------------------------------- [set]  ← |
+[접속요청] → [fetch('url',{cache:'force-cache'})] → [ hit  ]   |
+[html] ←---------------------------------------------          |
+```
+
+#### (3)`cache: 'reload`
 
 ```ts
 // 네트워크 요청 후 캐시 업데이트
