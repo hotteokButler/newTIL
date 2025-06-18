@@ -64,9 +64,27 @@ fetch('https://api...', { cache: 'reload' });
 fetch('https://api...', { next: { revalidate: 600 } }); // 10분마다 재검증
 ```
 
+- 특정 시간을 주기로 캐시를 업데이트 ( Page Router의 ISR 방식과 유사 함)
 - `number`: (초 단위 TTL) 특정 시간이 지난 후 백그라운드에서 자동 revalidation.
 - `0`: 캐시 하지 않고, SSR처럼 매 요청마다 fetch.
 - `false`: 캐시 무기한 유지
+
+```text
+              [Next server                                       ] [ 백엔드 서버 ]
+              [사전 렌더링                        ] [ 데이터 캐시]
+
+[접속요청] → [fetch('url',{next: {revalidate : 3}})] → [ miss ] → |
+[html] ←--------------------------------------------- [set]  ←    |
+[접속요청] → [fetch('url',{next: {revalidate : 3}})] → [ hit  ]   |
+[html] ←---------------------------------------------             |
+                  ********** 3초 지남 **********
+[접속요청] → [fetch('url',{next: {revalidate : 3}})] → [ stale ] → | // 오래된 상태
+[html] ←-------------------------------------------------------    | // 오래된 데이터라도 우선 렌더링 먼저
+                                                        [ set  ] ← | // Revalidate Data
+[접속요청] → [fetch('url',{next: {revalidate : 3}})] → [ hit  ]    |
+[html] ←---------------------------------------------              |
+
+```
 
 #### ✅ 태그 기반 무효화
 
