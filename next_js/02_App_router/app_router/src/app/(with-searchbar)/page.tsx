@@ -1,21 +1,18 @@
-import getBookItems from '@/api/get-book-items';
-import BookItem from '@/components/book-item';
+import AllBooks from '@/components/all-books';
+import RandomBooks from '@/components/random-books';
 
 import style from './page.module.css';
 
-export default async function Home() {
-	const allBooks = await getBookItems();
-	const randomBooks = await getBookItems('random');
-
+export default function Home() {
 	return (
 		<div className={style.container}>
 			<section>
 				<h3>지금 추천하는 도서</h3>
-				{randomBooks ? randomBooks.map((book) => <BookItem key={book.id} {...book} />) : '준비중입니다.'}
+				<RandomBooks />
 			</section>
 			<section>
 				<h3>등록된 모든 도서</h3>
-				{allBooks ? allBooks.map((book) => <BookItem key={book.id} {...book} />) : '준비중입니다.'}
+				<AllBooks />
 			</section>
 		</div>
 	);
