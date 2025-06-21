@@ -56,3 +56,11 @@
 | **메모리 위치** | 서버 RAM (메모리용 임시 저장)       | HTTP 캐시/서버 캐시 (파일, 메모리, 디스크 등 다양)              |
 | **목적**        | 중복 fetch 호출 제거                | 외부 데이터 소스/API에 대한 호출량 절감 및 재사용               |
 | **제어 방식**   | 자동; signal로 예외 처리 가능       | `{ cache: 'force-cache' }`, `next.revalidate`, 태그 등으로 구성 |
+
+### 📚 인용 (References)
+
+> - [한 입 크기로 잘라먹는 Next.js(v15) 강의 | 이정환 Winterlood](https://www.inflearn.com/course/%ED%95%9C%EC%9E%85-%ED%81%AC%EA%B8%B0-nextjs)
+> - [Request Memoization - Next.js Docs](https://nextjs.org/docs/app/building-your-application/caching#request-memoization)
+> - [Caching and Revalidating - Next.js Docs](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating)
+> - [Route Handlers - Next.js Docs](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)
+> - [unstable_cache - API Reference](https://nextjs.org/docs/app/api-reference/functions/unstable_cache)
