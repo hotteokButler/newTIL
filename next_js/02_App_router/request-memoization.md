@@ -1,4 +1,4 @@
-# Requset Memoization
+# Request Memoization
 
 ## ✅ 1. 핵심 컨셉
 
