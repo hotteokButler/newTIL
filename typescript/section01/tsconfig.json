@@ -1,8 +1,9 @@
 // ts complie option 설정 파일
 {
-	// - compilerOptions : 컴파일
+	// - compilerOptions : 컴파일 결과 생성되는 자바스크립트 코드의 버전 설정
 	"compilerOptions": {
-		"target": "ES5"
+		"target": "ESNext", //최신 버전의 코드 생성됨
+		"skipLibCheck": true
 	},
 	// - include : 컴파일 할 TypeScript 파일들의 범위와 위치를 알려줌
 	"include": [
