@@ -1,5 +1,11 @@
 // ts complie option 설정 파일
-
 {
-	"include": ["src"]
+	// - compilerOptions : 컴파일
+	"compilerOptions": {
+		"target": "ES5"
+	},
+	// - include : 컴파일 할 TypeScript 파일들의 범위와 위치를 알려줌
+	"include": [
+		"src" // src 폴더 아래 모든 ts 파일을 동시에 컴파일 하도록 설정
+	]
 }

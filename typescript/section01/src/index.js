@@ -1,2 +1,4 @@
-console.log('hello ts!');
-var a = 1; // 실제 실행에 관계없는 타임 관련된 코드들은 컴파일 과정에서 사라짐
+// ES6 버전에서 추가된 arrow function의 경우 함수 표현식으로 바뀌어 변환됨
+var func = function () {
+	return console.log('arrow function');
+};
