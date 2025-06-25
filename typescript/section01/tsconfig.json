@@ -4,7 +4,8 @@
 	"compilerOptions": {
 		"target": "ESNext", //최신 버전의 코드 생성됨
 		"skipLibCheck": true, //
-		"module": "commonjs"
+		"module": "ESNext", // 컴파일 되는 모듈 시스템 설정
+		"outDir": "dist" // 컴파일된 자바스크립트 파일이 위치할 경로를 설정
 	},
 	// - include : 컴파일 할 TypeScript 파일들의 범위와 위치를 알려줌
 	"include": [
