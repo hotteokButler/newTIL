@@ -35,6 +35,8 @@
 
 ## 🙂기본타입
 
+- 타입스크립트가 자체적으로 제공하는 타입
+
 1. Boolean
    ```ts
    let isLogin: boolean = false;
@@ -87,26 +89,26 @@
 
   ```ts
   enum Fruit {
-    Apple,
-    Banana,
-    Orange,
+  	Apple,
+  	Banana,
+  	Orange,
   }
   let fruitLi: Fruit = Fruit.Apple;
 
   //index
   enum Fruit {
-    Apple,
-    Banana,
-    Orange,
+  	Apple,
+  	Banana,
+  	Orange,
   }
   let fruitLi: Fruit = Fruit.Apple;
   let fruitName: string = fruitLi[2]; // 'Orange'
 
   //index 임의 변경
   enum Fruit {
-    Apple = 2,
-    Banana,
-    Orange,
+  	Apple = 2,
+  	Banana,
+  	Orange,
   } // enum Fruit {Apple=2, Banana=5, Orange=8} 가능
   let fruitLi: Fruit = Fruit.Apple;
   let fruitName: string = fruitLi[2]; // 'Apple'
@@ -125,11 +127,11 @@
 
   ```ts
   function printSomething(): void {
-    console.log('sth');
+  	console.log('sth');
   }
 
   function returnNothing(): void {
-    return;
+  	return;
   }
   ```
 
@@ -156,8 +158,8 @@
 
   ```ts
   type Player = {
-    name: string;
-    age?: number;
+  	name: string;
+  	age?: number;
   };
 
   const palyMaker = (name: string, age?: number): Player => (age ? { name, age } : { name });
@@ -181,9 +183,9 @@
   ```ts
   const makeName = (fname: string, lname = 'Smith') => fname + ' ' + lname;
   const res = makeName('Jone'); // "Jone Smith'
-  const res2 = makeName('Jone','Chris'); // "Jone Chris"
+  const res2 = makeName('Jone', 'Chris'); // "Jone Chris"
   ```
 - rest parameters 나머지 매개변수
   ```ts
-    const makeName = (fname: string, ...rname: string[]) => fname + " " + rname.join(" ");
+  const makeName = (fname: string, ...rname: string[]) => fname + ' ' + rname.join(' ');
   ```

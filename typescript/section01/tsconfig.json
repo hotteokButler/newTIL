@@ -6,7 +6,7 @@
 		"skipLibCheck": true, //
 		"module": "ESNext", // 컴파일 되는 모듈 시스템 설정
 		"outDir": "dist", // 컴파일된 자바스크립트 파일이 위치할 경로를 설정
-		"strict": false, // 컴파일 시 코드를 엄격하게 검사할지 유무 설정
+		"strict": true, // 컴파일 시 코드를 엄격하게 검사할지 유무 설정
 		"moduleDetection": "force" // 개별 모듈 변환 설정
 	},
 	// - include : 컴파일 할 TypeScript 파일들의 범위와 위치를 알려줌
