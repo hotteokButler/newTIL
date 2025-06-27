@@ -56,7 +56,7 @@ let str: string = neverFunc(); // ok
 let bool: boolean = neverFunc(); // ok
 ```
 
-### **Vild** 타입
+### **Void** 타입
 
 ```ts
 function voidFunc(): void {
