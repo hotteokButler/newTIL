@@ -51,11 +51,12 @@ let union3: Union1 = {
  * 2, 교집합 - Intersection type
  * - (주의) 기본 타입들은 서로 공유하거나 겹치는 타입이 없기 때문에 기본 타입끼리는 never 타입이 됨
  * - 객체 타입에서 많이 사용됨
+ * - Intersection Type에서는 하나의 프로퍼티라도 빠지면 오류가 발생
  */
 
 let variable: number & string; // never타입 (집합에서 공집합) -
 
-type Intersection = Dog & Person;
+type Intersection = Dog & Person; // 두 타입의
 
 let intersection1: Intersection = {
 	name: '',
