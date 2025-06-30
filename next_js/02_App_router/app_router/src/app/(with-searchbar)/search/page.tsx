@@ -5,5 +5,6 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ q
 	const { q } = await searchParams;
 
 	const books = await searchBookItem(q);
+
 	return <div>{books && books.map((book) => <BookItem key={book.id} {...book} />)}</div>;
 }

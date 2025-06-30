@@ -2,14 +2,13 @@ import { BookData } from '@/types';
 
 const getBookItems = async (param?: string): Promise<BookData[] | void> => {
 	try {
-		const res = await fetch(`${process.env.ONE_BITE_BOOKS}/book/${param ? param : ''}`);
+		const res = await fetch(`${process.env.ONE_BITE_BOOKS}/book/${param ? param : ''}`, { next: { revalidate: 10 } });
 
 		if (!res.ok) {
 			throw new Error(`HTTP error! status: ${res.status}`);
 		}
 		const books = await res.json();
 		return books;
-		2;
 	} catch (error) {
 		console.log('Error:', error);
 	}

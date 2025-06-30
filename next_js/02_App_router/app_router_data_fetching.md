@@ -9,6 +9,7 @@ Client 요청 → Next.js → getServerSideProps/getStaticProps 실행 →
 외부 데이터 fetch/DB 조회 →
 props 생성 → 페이지 컴포넌트 렌더링 →
 HTML + JSON 반환 → 클라이언트 hydration 및 이후 CSR (ex. useEffect, SWR 등)
+
 ```
 
 #### ⚠️ Pages Router Data Fetching의 제한 및 문제점
