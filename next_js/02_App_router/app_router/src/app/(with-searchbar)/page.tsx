@@ -3,7 +3,9 @@ import RandomBooks from '@/components/random-books';
 
 import style from './page.module.css';
 
-/* 특정 페이지의 유형을 강제로 Static, Dynamic 페이지로 설정
+/* Dynamic Option : 특정 페이지의 유형을 강제로 Static, Dynamic 페이지로 설정
+   -> 특별한 상황이 아니라면 권장되지 않음!
+	 -> 개발 시 페이지의 캐싱을 테스트 할 경우, 라우트 옵션을 강제로 설정해서 테스트 할 수 있음
 - 1. auto : 기본값, 아무것도 강제하지 않음
 - 2. force-dynamic : 강제로 Dynamic 페이지로 설정
 - 3. force-static : 강제로 Static으로 설정
