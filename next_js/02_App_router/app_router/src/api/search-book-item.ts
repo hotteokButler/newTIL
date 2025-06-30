@@ -4,7 +4,7 @@ const searchBookItem = async (q?: string): Promise<BookData[] | null> => {
 	if (!q) return null;
 
 	try {
-		const res = await fetch(`${process.env.ONE_BITE_BOOKS}/book/search?q=${q}`, { next: { revalidate: 5 } });
+		const res = await fetch(`${process.env.ONE_BITE_BOOKS}/book/search?q=${q}`, { cache: 'force-cache' });
 
 		if (!res.ok) {
 			throw new Error(`HTTP error - status: ${res.status}`);
