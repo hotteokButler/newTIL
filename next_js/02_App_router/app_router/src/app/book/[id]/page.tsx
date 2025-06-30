@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation';
+
 import getBookDesc from '@/api/get-book-desc';
 
 import style from './page.module.css';
@@ -7,7 +9,7 @@ export default async function Page({ params }: { params: Promise<{ id: string | 
 
 	const book_data = await getBookDesc(id);
 
-	if (!book_data) return <h1>데이터를 불러오지 못했습니다</h1>;
+	if (!book_data) return notFound();
 
 	const { title, subTitle, description, author, publisher, coverImgUrl } = book_data;
 
