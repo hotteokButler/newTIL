@@ -3,6 +3,10 @@
 import searchBookItem from '@/api/search-book-item';
 import BookItem from '@/components/book-item';
 
+export function generateStaticParams() {
+	return [{ id: '1' }, { id: '2' }, { id: '3' }];
+}
+
 export default async function Page({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
 	const { q } = await searchParams;
 
