@@ -42,10 +42,12 @@ let d: D = (value) => {};
 d = c; // 다운 캐스팅 허용
 
 type Animal = {
+	// 조건이 더 적으니 super type
 	name: string;
 };
 
 type Dog = {
+	// 조건이 더 많아서 sub
 	name: string;
 	color: string;
 };
