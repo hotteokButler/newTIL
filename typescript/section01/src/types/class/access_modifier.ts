@@ -7,6 +7,7 @@
  *
  * 2) 생성자에 접근 제어자를 달면 해당 접근 제어자 속성을 자동으로 만든다.
  *     - 이때 미리 선언한 필드가 있다면 오류 발생
+ *
  */
 
 class Employee {
@@ -27,5 +28,5 @@ const employee = new Employee('김아무개', 28, 'developer');
 
 //
 // employee.name = '홍길동'; //
-employee.age = 22;
+// employee.age = 22;
 employee.position = 'ux 디자이너';
