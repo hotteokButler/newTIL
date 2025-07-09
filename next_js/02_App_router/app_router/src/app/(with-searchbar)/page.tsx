@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import AllBooks from '@/components/all-books';
 import RandomBooks from '@/components/random-books';
 
@@ -15,18 +17,22 @@ import style from './page.module.css';
 - 4. error : 페이지를 강제로 static 페이지로 강제로 설정 하나,
             설정하면 안되는 이유(동적함수 설정 / 캐싱되지 않은 데이터 패칭)가 있다면 빌드시 오류 발생 
 */
-// export const dynamic = 'auto';
+export const dynamic = 'force-dynamic'; // suspense 활용을 위해 강제로 dynamic page로 변경
 
 export default function Home() {
 	return (
 		<div className={style.container}>
 			<section>
 				<h3>지금 추천하는 도서</h3>
-				<RandomBooks />
+				<Suspense fallback={<div>...도서를 줄러오는 중입니다</div>}>
+					<RandomBooks />
+				</Suspense>
 			</section>
 			<section>
 				<h3>등록된 모든 도서</h3>
-				<AllBooks />
+				<Suspense fallback={<div>...도서를 줄러오는 중입니다</div>}>
+					<AllBooks />
+				</Suspense>
 			</section>
 		</div>
 	);
