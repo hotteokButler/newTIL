@@ -8,11 +8,18 @@ export function generateStaticParams() {
 	return [{ id: '1' }, { id: '2' }, { id: '3' }];
 }
 
-export default async function Page({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
-	const { q } = await searchParams;
-
+async function SearchResult({ q }: { q: string }) {
 	await delay(3000);
 	const books = await searchBookItem(q);
 
-	return <div>{books && books.map((book) => <BookItem key={book.id} {...book} />)}</div>;
+	return books && books.map((book) => <BookItem key={book.id} {...book} />);
+}
+export default function Page({ searchParams }: { searchParams: { q?: string } }) {
+	const { q } = searchParams;
+
+	return (
+		<div>
+			<SearchResult q={q || ''} />
+		</div>
+	);
 }
