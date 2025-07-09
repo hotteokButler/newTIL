@@ -2,6 +2,8 @@ import { Suspense } from 'react';
 
 import AllBooks from '@/components/all-books';
 import RandomBooks from '@/components/random-books';
+import BookItemSkeleton from '@/components/skeleton/book-item-skeleton';
+import renderBookItemSkeleton from '@/components/skeleton/render-book-item-skeleton';
 
 import style from './page.module.css';
 
@@ -24,13 +26,13 @@ export default function Home() {
 		<div className={style.container}>
 			<section>
 				<h3>지금 추천하는 도서</h3>
-				<Suspense fallback={<div>...도서를 줄러오는 중입니다</div>}>
+				<Suspense fallback={renderBookItemSkeleton(3)}>
 					<RandomBooks />
 				</Suspense>
 			</section>
 			<section>
 				<h3>등록된 모든 도서</h3>
-				<Suspense fallback={<div>...도서를 줄러오는 중입니다</div>}>
+				<Suspense fallback={renderBookItemSkeleton(5)}>
 					<AllBooks />
 				</Suspense>
 			</section>
