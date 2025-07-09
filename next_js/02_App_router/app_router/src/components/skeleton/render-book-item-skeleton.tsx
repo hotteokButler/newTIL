@@ -1,13 +1,5 @@
-import { ReactNode } from 'react';
-
 import BookItemSkeleton from './book-item-skeleton';
 
-export default function renderBookItemSkeleton(count: number): ReactNode[] {
-	const elements: ReactNode[] = [];
-
-	for (let i = 0; i < count; i++) {
-		elements.push(<BookItemSkeleton key={i} />);
-	}
-
-	return elements;
+export default function BookItemSListkeleton({ count }: { count: number }) {
+	return new Array(count).fill(0).map((_, idx) => <BookItemSkeleton key={idx} />);
 }
