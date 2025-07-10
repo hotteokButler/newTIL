@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 
-import getBookDesc from '@/api/get-book-desc';
+import getBookDesc from '@/app/_api/get-book-desc';
 
 import style from './page.module.css';
 

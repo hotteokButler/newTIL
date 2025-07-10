@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react';
 
-import searchBookItem from '@/api/search-book-item';
+import searchBookItem from '@/app/_api/search-book-item';
 import BookItem from '@/components/book-item';
 import { delay } from '@/util/delay';
 

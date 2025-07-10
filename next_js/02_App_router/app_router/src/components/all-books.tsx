@@ -1,4 +1,4 @@
-import getBookItems from '@/api/get-book-items';
+import getBookItems from '@/app/_api/get-book-items';
 import { delay } from '@/util/delay';
 
 import BookItem from './book-item';
