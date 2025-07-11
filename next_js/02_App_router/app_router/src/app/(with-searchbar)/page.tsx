@@ -6,7 +6,7 @@ import BookItemSkeleton from '@/components/skeleton/book-item-skeleton';
 import renderBookItemSkeleton from '@/components/skeleton/render-book-item-skeleton';
 import BookItemSListkeleton from '@/components/skeleton/render-book-item-skeleton';
 
-import Error from './error';
+import Error from '../error';
 import style from './page.module.css';
 
 /* Dynamic Option : 특정 페이지의 유형을 강제로 Static, Dynamic 페이지로 설정
