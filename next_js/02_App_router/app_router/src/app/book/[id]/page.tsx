@@ -9,7 +9,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 	return (
 		<div className={style.outer_wrap}>
 			<BookDetail id={id} />
-			<ReviewEditor />
+			<ReviewEditor bookId={id} />
 		</div>
 	);
 }

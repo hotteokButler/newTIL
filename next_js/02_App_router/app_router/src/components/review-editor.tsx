@@ -1,6 +1,4 @@
-import React from 'react';
-
-export default function ReviewEditor() {
+export default function ReviewEditor({ bookId }: { bookId: string }) {
 	const submitReview = async (formData: FormData) => {
 		'use server';
 
@@ -9,6 +7,21 @@ export default function ReviewEditor() {
 
 		if (!content || !author) {
 			return; // server action 종료
+		}
+
+		try {
+			const res = await fetch(`${process.env.ONE_BITE_BOOKS}/review`, {
+				method: 'POST',
+				body: JSON.stringify({
+					bookId,
+					content,
+					author,
+				}),
+			});
+			console.log(res.status);
+		} catch (err) {
+			console.error(err);
+			return;
 		}
 	};
 
