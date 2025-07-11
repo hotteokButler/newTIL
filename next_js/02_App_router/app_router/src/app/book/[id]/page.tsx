@@ -1,5 +1,5 @@
-import ReviewEditor from '@/actions/review-editor';
 import BookDetail from '@/components/book-detail';
+import ReviewEditor from '@/components/review-editor';
 
 import style from './page.module.css';
 
