@@ -1,7 +1,7 @@
+'use server';
+
 export default function ReviewEditor({ bookId }: { bookId: string }) {
 	const submitReview = async (formData: FormData) => {
-		'use server';
-
 		const content = formData.get('content')?.toString();
 		const author = formData.get('author')?.toString();
 
