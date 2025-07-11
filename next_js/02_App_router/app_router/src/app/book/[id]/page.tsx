@@ -3,8 +3,8 @@ import ReviewEditor from '@/components/review-editor';
 
 import style from './page.module.css';
 
-export default function Page({ params }: { params: { id: string } }) {
-	const { id } = params;
+export default async function Page({ params }: { params: { id: string } }) {
+	const { id } = await params;
 
 	return (
 		<div className={style.outer_wrap}>
