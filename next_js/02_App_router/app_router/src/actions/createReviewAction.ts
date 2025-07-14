@@ -2,16 +2,23 @@
 
 import { revalidateTag } from 'next/cache';
 
-export const createReviewAction = async (formData: FormData) => {
+import { delay } from '@/util/delay';
+
+// useActionState를 사용하는 경우 첫 번째 인수로 state를 전달되기 때문에 사용하지 않는다면 _ 언더바를 통해 활용하지 않는다는 식으로 설정하기도 함
+export const createReviewAction = async (_: any, formData: FormData) => {
 	const bookId = formData.get('bookId')?.toString();
 	const content = formData.get('content')?.toString();
 	const author = formData.get('author')?.toString();
 
 	if (!content || !author) {
-		return; // server action 종료
+		return {
+			status: false,
+			error: '리뷰 내용과 작성자를 입력해주세요',
+		}; // server action 종료
 	}
 
 	try {
+		delay(2000);
 		const res = await fetch(`${process.env.ONE_BITE_BOOKS}/review`, {
 			method: 'POST',
 			body: JSON.stringify({
@@ -20,7 +27,6 @@ export const createReviewAction = async (formData: FormData) => {
 				author,
 			}),
 		});
-		console.log(res.status);
 		// revalidatePath(); : 해당 호출된 페이지가 서버측에서 다시 생성됨, 컴포넌트가 리렌더링 되면서 데이터 패칭이 새롭게 일어남
 		// ㄴ> (주의사항)
 		// - server component에서만 호출 가능,
@@ -48,10 +54,20 @@ export const createReviewAction = async (formData: FormData) => {
 		 * const res = await fetch(`api`, {next : {tags : [`review-${bookId}`]}})
 		 * revalidateTag(`review-${bookId}`);
 		 */
-
+		if (!res.ok) {
+			throw new Error(res.statusText);
+		}
 		revalidateTag(`review-${bookId}`);
+
+		return {
+			status: true,
+			error: '',
+		};
 	} catch (err) {
 		console.error(err);
-		return;
+		return {
+			status: false,
+			error: `리뷰 저장에 실패했습니다 : ${err}`,
+		};
 	}
 };
