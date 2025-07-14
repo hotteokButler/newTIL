@@ -9,6 +9,7 @@ export default function ReviewEditor({ bookId }: { bookId: string }) {
 	const [state, formAction, isPending] = useActionState(createReviewAction, null);
 
 	useEffect(() => {
+		//에러처리
 		if (state && !state.status) {
 			alert(state.error);
 		}
