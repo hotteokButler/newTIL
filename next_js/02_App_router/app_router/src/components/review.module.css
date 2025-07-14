@@ -1,1 +1,71 @@
 @charset "utf-8";
+
+/* review-editor */
+.form_wrap form {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.form_wrap input,
+.form_wrap textarea {
+	border-radius: 0.2rem;
+	border: 1px solid #efefef;
+}
+.form_wrap textarea {
+	width: 100%;
+	height: 100px;
+	resize: none;
+	padding: 10px;
+}
+.submit_con {
+	display: flex;
+	gap: 5px;
+	justify-content: flex-end;
+}
+.submit_con button {
+	width: 80px;
+	padding: 10px;
+	background: #155fb9;
+	color: #fff;
+	border-radius: 0.2rem;
+	font-weight: bold;
+}
+.submit_con button:hover {
+	background: #093973;
+}
+
+/* review-list */
+.review_list_wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+/* review-item */
+.review_item_con {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.review_item_author {
+	font-size: 13px;
+	font-weight: bold;
+}
+.review_item_content {
+	background: #efefef92;
+	border-radius: 0.2rem;
+	padding: 10px;
+}
+.review_item_info {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	font-size: 12px;
+	color: #aaa;
+}
+.review_item_info button {
+	font-size: 12px;
+}
+.review_item_info button:hover {
+	color: tomato;
+}
