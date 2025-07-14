@@ -1,5 +1,6 @@
 import BookDetail from '@/components/book-detail';
 import ReviewEditor from '@/components/review-editor';
+import ReviewList from '@/components/review-list';
 
 import style from './page.module.css';
 
@@ -8,8 +9,9 @@ export default async function Page({ params }: { params: { id: string } }) {
 
 	return (
 		<div className={style.outer_wrap}>
-			<BookDetail id={id} />
+			<BookDetail bookId={id} />
 			<ReviewEditor bookId={id} />
+			<ReviewList bookId={id} />
 		</div>
 	);
 }

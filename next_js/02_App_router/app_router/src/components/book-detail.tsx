@@ -3,8 +3,8 @@ import { notFound } from 'next/navigation';
 import getBookDesc from '@/app/_api/get-book-desc';
 import style from '@/app/book/[id]/page.module.css';
 
-export default async function BookDetail({ id }: { id: string }) {
-	const book_data = await getBookDesc(id);
+export default async function BookDetail({ bookId }: { bookId: string }) {
+	const book_data = await getBookDesc(bookId);
 
 	if (!book_data) return notFound();
 
