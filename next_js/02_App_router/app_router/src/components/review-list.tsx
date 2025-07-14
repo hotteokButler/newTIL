@@ -11,7 +11,7 @@ export default async function ReviewList({ bookId }: { bookId: string }) {
 
 	if (!review) return;
 
-	const sortedReviews = sortArr(review, 'id');
+	const sortedReviews = sortArr(review, 'id', 'desc');
 
 	return (
 		<div className={style.review_list_wrap}>
