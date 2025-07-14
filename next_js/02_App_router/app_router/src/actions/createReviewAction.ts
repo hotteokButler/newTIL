@@ -18,7 +18,7 @@ export const createReviewAction = async (_: any, formData: FormData) => {
 	}
 
 	try {
-		delay(2000);
+		delay(2000); //
 		const res = await fetch(`${process.env.ONE_BITE_BOOKS}/review`, {
 			method: 'POST',
 			body: JSON.stringify({

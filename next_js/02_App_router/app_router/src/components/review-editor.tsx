@@ -1,12 +1,19 @@
 'use client';
 
-import { useActionState } from 'react';
+import { use, useActionState, useEffect } from 'react';
 
 import { createReviewAction } from '@/actions/createReviewAction';
 import style from '@/components/review.module.css';
 
 export default function ReviewEditor({ bookId }: { bookId: string }) {
 	const [state, formAction, isPending] = useActionState(createReviewAction, null);
+
+	useEffect(() => {
+		if (state && !state.status) {
+			alert(state.error);
+		}
+	}, [state]);
+
 	return (
 		<section className={style.form_wrap}>
 			<form action={formAction}>
