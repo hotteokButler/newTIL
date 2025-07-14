@@ -12,7 +12,7 @@ export default function ReviewItem({ id, content, author, createdAt, bookId }: B
 			<div className={style.review_item_content}>{content}</div>
 			<div className={style.review_item_info}>
 				<div>{new Date(createdAt).toLocaleString('ko-KR')}</div>
-				<ReviewDeleteBtn />
+				<ReviewDeleteBtn reviewId={id} bookId={bookId} />
 			</div>
 		</div>
 	);

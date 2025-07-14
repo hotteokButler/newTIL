@@ -25,6 +25,7 @@ export async function deleteReviewAction(_: any, formData: FormData) {
 			throw new Error(res.statusText);
 		}
 
+		//재검증
 		revalidateTag(`review-${bookId}`);
 
 		return {
