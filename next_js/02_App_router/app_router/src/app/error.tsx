@@ -1,7 +1,7 @@
 // Error handling
 'use client';
 
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { startTransition, useEffect } from 'react';
 
 export default function Error({ error, reset }: { error: Error; reset: () => void }) {
@@ -33,7 +33,7 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
 				onClick={() => {
 					// startTransition : 1개의 콜백함수를 인수로 잔달 받아 콜백 함수 안에 들어있는 UI를 변경시키는 작업들을 모두 일괄처리
 					startTransition(() => {
-						router.reload();
+						router.refresh();
 						reset();
 					});
 				}}

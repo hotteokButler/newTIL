@@ -19,6 +19,9 @@ export default function RootLayout({
 					<main>{children}</main>
 					<footer>제작 @winterlood</footer>
 				</div>
+
+				{/* 모달을 띄워 줄 위치 설정 */}
+				<div id='modal-root'></div>
 			</body>
 		</html>
 	);
