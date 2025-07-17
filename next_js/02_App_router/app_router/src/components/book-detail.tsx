@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 import getBookDesc from '@/app/_api/get-book-desc';
@@ -13,7 +14,7 @@ export default async function BookDetail({ bookId }: { bookId: string }) {
 	return (
 		<section className={style.container}>
 			<div className={style.cover_img_container} style={{ backgroundImage: `url('${coverImgUrl}')` }}>
-				<img src={coverImgUrl} />
+				<Image src={coverImgUrl} alt={title} height={650} width={450} />
 			</div>
 			<div className={style.title}>{title}</div>
 			<div className={style.subTitle}>{subTitle}</div>

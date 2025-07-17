@@ -16,6 +16,7 @@ async function SearchResult({ q }: { q: string }) {
 
 	return books && books.map((book) => <BookItem key={book.id} {...book} />);
 }
+
 export default function Page({ searchParams }: { searchParams: { q?: string } }) {
 	const { q } = searchParams;
 
