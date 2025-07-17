@@ -1,12 +1,10 @@
+import { Metadata } from 'next';
 import { Suspense } from 'react';
 
 import AllBooks from '@/components/all-books';
 import RandomBooks from '@/components/random-books';
-import BookItemSkeleton from '@/components/skeleton/book-item-skeleton';
-import renderBookItemSkeleton from '@/components/skeleton/render-book-item-skeleton';
 import BookItemSListkeleton from '@/components/skeleton/render-book-item-skeleton';
 
-import Error from '../error';
 import style from './page.module.css';
 
 /* Dynamic Option : 특정 페이지의 유형을 강제로 Static, Dynamic 페이지로 설정
@@ -22,6 +20,17 @@ import style from './page.module.css';
             설정하면 안되는 이유(동적함수 설정 / 캐싱되지 않은 데이터 패칭)가 있다면 빌드시 오류 발생 
 */
 export const dynamic = 'force-dynamic'; // suspense 활용을 위해 강제로 dynamic page로 변경
+
+// 정적 방식
+export const metadata: Metadata = {
+	title: '한입 북스',
+	description: '한입 북스에 등록된 도서를 만나보세요',
+	openGraph: {
+		title: '한입 북스',
+		description: '한입 북스에 등록된 도서를 만나보세요',
+		images: ['/thumbnail.png'],
+	},
+};
 
 export default function Home() {
 	return (
