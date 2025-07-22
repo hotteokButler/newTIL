@@ -2,6 +2,8 @@ import Link from 'next/link';
 
 import { FaXTwitter } from 'react-icons/fa6';
 
+import style from './page.module.css';
+
 const Home = () => {
 	return (
 		<div>
