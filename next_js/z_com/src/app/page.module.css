@@ -4,7 +4,7 @@
 	width: 100dvw;
 	min-height: 100dvh;
 	display: flex;
-	gap: 2.5em;
+	gap: 3em;
 	justify-content: center;
 }
 .main_left,
@@ -25,7 +25,7 @@
 }
 .main_right h2 {
 	width: 100%;
-	font-size: 4em;
+	font-size: 3.5em;
 	margin: 0;
 }
 .main_right h3 {

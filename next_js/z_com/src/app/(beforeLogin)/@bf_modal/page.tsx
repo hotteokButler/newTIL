@@ -1,7 +1,57 @@
-import React from 'react';
+'use client';
 
-const page = () => {
-	return <div>before login modal</div>;
+import React, { useState } from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
+
+import style from './bf_modal.module.css';
+
+const Modal = () => {
+	const [id, setId] = useState();
+	const [password, setPassword] = useState();
+	const [message, setMessage] = useState();
+
+	const onSubmit = () => {};
+
+	const onClickClose = () => {};
+
+	const onChageId = () => {};
+
+	const onChangePassword = () => {};
+
+	return (
+		<div className={style.modal_wrap}>
+			<div className={style.modal_con}>
+				<button className={style.modal_close_btn} onClick={onClickClose}>
+					<AiOutlineClose />
+				</button>
+				<div className={style.modal_header}>
+					<h3>로그인하세요.</h3>
+				</div>
+				<form onSubmit={onSubmit}>
+					<ul className={style.modal_body}>
+						<li className={style.modal_input_con}>
+							<label htmlFor='id' className={style.modal_label}>
+								아이디
+							</label>
+							<input type='text' name='id' id='id' className={style.modal_input} />
+						</li>
+						<li className={style.modal_input_con}>
+							<label htmlFor='password' className={style.modal_label}>
+								비밀번호
+							</label>
+							<input type='password' id='password' name='password' className={style.modal_input} />
+						</li>
+						<li className={style.modal_message}>{message}</li>
+						<li className={style.modal_footer}>
+							<button className={style.modal_action_btn} disabled={!id && !password}>
+								로그인하기
+							</button>
+						</li>
+					</ul>
+				</form>
+			</div>
+		</div>
+	);
 };
 
-export default page;
+export default Modal;
