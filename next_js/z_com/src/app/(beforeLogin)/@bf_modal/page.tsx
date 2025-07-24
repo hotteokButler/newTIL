@@ -30,16 +30,16 @@ const Modal = () => {
 				<form onSubmit={onSubmit}>
 					<ul className={style.modal_body}>
 						<li className={style.modal_input_con}>
+							<input type='text' name='id' id='id' className={style.modal_input} />
 							<label htmlFor='id' className={style.modal_label}>
 								아이디
 							</label>
-							<input type='text' name='id' id='id' className={style.modal_input} />
 						</li>
 						<li className={style.modal_input_con}>
+							<input type='password' id='password' name='password' className={style.modal_input} />
 							<label htmlFor='password' className={style.modal_label}>
 								비밀번호
 							</label>
-							<input type='password' id='password' name='password' className={style.modal_input} />
 						</li>
 						<li className={style.modal_message}>{message}</li>
 						<li className={style.modal_footer}>
