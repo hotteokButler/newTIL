@@ -5,7 +5,7 @@ import { FaXTwitter } from 'react-icons/fa6';
 import Button from '@/components/buttons/Button';
 import { ColorMap } from '@/types/colorMap';
 
-import style from './page.module.css';
+import style from '../page.module.css';
 
 const Home = () => {
 	return (
