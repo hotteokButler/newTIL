@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 
 import style from './bf_modal.module.css';
 
 const Modal = () => {
+	const modalRef = useRef<HTMLDivElement>(null);
 	const [id, setId] = useState();
 	const [password, setPassword] = useState();
 	const [message, setMessage] = useState();
@@ -20,7 +21,7 @@ const Modal = () => {
 
 	return (
 		<div className={style.modal_wrap}>
-			<div className={style.modal_con}>
+			<div className={style.modal_con} ref={modalRef}>
 				<button className={style.modal_close_btn} onClick={onClickClose}>
 					<AiOutlineClose />
 				</button>

@@ -23,7 +23,9 @@ const Home = () => {
 				</Button>
 				<h4>이미 트위터에 가입하셨나요?</h4>
 				<Button textColor={ColorMap.MAIN.BUTTON.STABLE} borderColor={ColorMap.MAIN.BUTTON.STABLE}>
-					<Link href='/login'>로그인</Link>
+					<Link href='/login' scroll={false}>
+						로그인
+					</Link>
 				</Button>
 			</div>
 		</div>
