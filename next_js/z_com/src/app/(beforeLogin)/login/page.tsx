@@ -1,14 +1,19 @@
 'use client';
-import { useRouter } from 'next/navigation';
+
+import { usePathname, useRouter } from 'next/navigation';
 
 import { useEffect } from 'react';
 
 const LoginPage = () => {
 	const router = useRouter();
+	const pathname = usePathname();
 
 	useEffect(() => {
-		router.replace('/i/flow/login');
-	}, [router]);
+		const target = '/i/flow/login';
+		if (pathname !== target) {
+			router.replace(target);
+		}
+	}, [pathname, router]);
 
 	return null;
 };
