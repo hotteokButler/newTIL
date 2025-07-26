@@ -1,13 +1,13 @@
 import React, { ReactNode } from 'react';
 
-type Props = { children: ReactNode; bf_modal: ReactNode };
+type Props = { children: ReactNode; modal: ReactNode };
 
-const layout = ({ children, bf_modal }: Props) => {
+const layout = ({ children, modal }: Props) => {
 	return (
-		<>
-			<div>{children}</div>
-			{bf_modal}
-		</>
+		<div>
+			{modal}
+			{children}
+		</div>
 	);
 };
 

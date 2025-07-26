@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 
-import style from './bf_modal.module.css';
+import style from '@/components/modal/modal.module.css';
 
-const Modal = () => {
+const LoginPage = () => {
 	const modalRef = useRef<HTMLDivElement>(null);
 	const [id, setId] = useState();
 	const [password, setPassword] = useState();
@@ -57,4 +57,4 @@ const Modal = () => {
 	);
 };
 
-export default Modal;
+export default LoginPage;
