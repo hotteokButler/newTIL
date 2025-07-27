@@ -18,7 +18,7 @@
 	max-width: 620px;
 	padding: 2em 3.5em;
 	height: 95%;
-	max-height: 550px;
+	max-height: 620px;
 	display: flex;
 	flex-direction: column;
 	border-radius: 0.5rem;
@@ -28,6 +28,7 @@
 .modal_con form {
 	height: 100%;
 }
+
 .modal_close_btn {
 	position: absolute;
 	top: 1.3em;
