@@ -12,8 +12,6 @@ import style from './nav.module.css';
 const Nav = () => {
 	const segment = useSelectedLayoutSegment();
 
-	console.log(segment);
-
 	// Dommy data
 	const user = {
 		id: 'hotteok',
