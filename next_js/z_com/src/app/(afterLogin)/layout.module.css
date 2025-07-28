@@ -14,19 +14,10 @@
 	flex-grow: 1;
 }
 .lf_section {
-	background: orange;
 	width: 18em;
 	padding: 0 0.5em;
 	height: 100dvh;
 	position: relative;
-}
-.lf_section_fixed {
-	position: fixed;
-	width: inherit;
-	height: 100dvh;
-	top: 0;
-	margin-left: -0.5em;
-	background: teal;
 }
 
 /* right */
@@ -44,7 +35,6 @@
 	height: 100%;
 	width: 55em;
 	gap: 1em;
-	background-color: tomato;
 }
 
 .main {

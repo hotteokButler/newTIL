@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import { IoSearch } from 'react-icons/io5';
 
+import LeftSide from './_components/LeftSide';
 import style from './layout.module.css';
 
 interface IProps {
@@ -12,7 +13,7 @@ const AfterLoginLayout = ({ children }: IProps) => {
 		<div className={style.main_container}>
 			<header className={style.main_lf_wrap}>
 				<section className={style.lf_section}>
-					<div className={style.lf_section_fixed}></div>
+					<LeftSide />
 				</section>
 			</header>
 			<div className={style.main_rg_wrap}>

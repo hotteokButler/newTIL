@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+.fixed_menu_nav {
+}
+.fixed_menu_nav ul {
+	margin-top: 0;
+}
+.fixed_menu_nav_elem {
+}
+.fixed_menu_nav_elem a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	padding: 0.75em 1.05em 0.55em;
+	font-size: 1.2em;
+	border-radius: 10em;
+}
+.fixed_menu_nav_elem a:hover {
+	background: #efefef;
+}
+.fixed_menu_nav_elem a svg {
+	font-size: 1.2em;
+}

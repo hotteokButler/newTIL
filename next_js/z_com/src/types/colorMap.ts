@@ -4,4 +4,10 @@ export const ColorMap = {
 			STABLE: '#0096ff',
 		},
 	},
+	HOME: {
+		LINK: {
+			STABLE: 'transparent',
+			HOVER: '#efefef',
+		},
+	},
 };

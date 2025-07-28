@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+.fixed_menu_wrap {
+	position: fixed;
+	width: inherit;
+	height: 100dvh;
+	top: 0;
+	margin-left: -0.5em;
+	padding: 0.5em;
+}
+.fixed_menu_top {
+}
+.fixed_menu_top h1 {
+	display: inline-block;
+}
+.fixed_menu_top a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1em 1.05em;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.fixed_menu_top a svg {
+	font-size: 1.5em;
+}
+
+.fixed_menu_top a:hover {
+	background-color: #efefef;
+}
