@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 .fixed_menu_nav {
+	flex: 1;
 }
 .fixed_menu_nav ul {
 	margin-top: 0;
@@ -20,4 +21,9 @@
 }
 .fixed_menu_nav_elem a svg {
 	font-size: 1.2em;
+}
+.nav_compose_btn {
+}
+.nav_compose_btn div {
+	width: 90%;
 }

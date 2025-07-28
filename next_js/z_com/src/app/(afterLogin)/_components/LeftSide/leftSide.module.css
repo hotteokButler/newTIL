@@ -5,7 +5,10 @@
 	width: inherit;
 	height: 100dvh;
 	top: 0;
+	display: flex;
+	flex-direction: column;
 	margin-left: -0.5em;
+
 	padding: 0.5em;
 }
 .fixed_menu_top {
@@ -30,7 +33,4 @@
 	background-color: #efefef;
 }
 .fixed_menu_btm {
-}
-.fixed_menu_btm div {
-	width: 90%;
 }

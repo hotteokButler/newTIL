@@ -7,6 +7,9 @@ import { AiFillHome, AiFillMail, AiOutlineHome, AiOutlineMail } from 'react-icon
 import { FaRegUser, FaUser } from 'react-icons/fa6';
 import { RiSearchFill, RiSearchLine } from 'react-icons/ri';
 
+import Button from '@/components/buttons/Button';
+import { ColorMap } from '@/types/colorMap';
+
 import style from './nav.module.css';
 
 const Nav = () => {
@@ -45,6 +48,12 @@ const Nav = () => {
 					</Link>
 				</li>
 			</ul>
+
+			<div className={style.nav_compose_btn}>
+				<Button background={ColorMap.MAIN.BUTTON.STABLE} borderColor={ColorMap.MAIN.BUTTON.STABLE}>
+					<Link href='/compose/tweet'>게시하기</Link>
+				</Button>
+			</div>
 		</nav>
 	);
 };

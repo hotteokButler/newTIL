@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+.logout_btn_wrap {
+	width: 90%;
+	display: flex;
+	gap: 0.5em;
+	align-items: center;
+	padding: 0.7em 1em 0.5em;
+	border-radius: 10em;
+	cursor: pointer;
+}
+.logout_btn_wrap:hover {
+	background-color: #efefef;
+}
+.user_img {
+}
+.user_img img {
+	border-radius: 50%;
+}
+.user_name {
+	flex: 1;
+}
+.user_name div {
+}
+.user_name span {
+	font-size: 0.85em;
+}
