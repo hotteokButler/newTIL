@@ -1,7 +1,9 @@
 import React, { ReactNode } from 'react';
-import { IoSearch } from 'react-icons/io5';
 
+import FollowRecommend from './_components/FollowRecommend';
 import LeftSide from './_components/LeftSide';
+import SearchBar from './_components/SearchBar';
+import TrendSection from './_components/TrendSection';
 import style from './layout.module.css';
 
 interface IProps {
@@ -20,14 +22,11 @@ const AfterLoginLayout = ({ children }: IProps) => {
 				<div className={style.main_rg_inner}>
 					<main className={style.main}>rg main{children}</main>
 					<section className={style.rg_section}>
-						<form action='' className={style.search_form}>
-							<div className={style.search_input}>
-								<label htmlFor='search'>
-									<IoSearch />
-								</label>
-								<input type='text' name='search' id='search' />
-							</div>
-						</form>
+						<div className={style.rg_search_con}>
+							<SearchBar />
+						</div>
+						<TrendSection />
+						<FollowRecommend />
 					</section>
 				</div>
 			</div>
