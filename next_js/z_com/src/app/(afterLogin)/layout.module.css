@@ -47,3 +47,14 @@
 	margin-bottom: 4em;
 	width: inherit;
 }
+
+.rg_follow_recommend_con {
+	width: inherit;
+	background: #f5f5f5;
+	border-radius: 0.8rem;
+	margin-top: 0.8em;
+}
+.rg_follow_title {
+	font-size: 1.3em;
+	padding: 0.8em 0.6em 0;
+}

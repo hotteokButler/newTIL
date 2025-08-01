@@ -26,7 +26,12 @@ const AfterLoginLayout = ({ children }: IProps) => {
 							<SearchBar />
 						</div>
 						<TrendSection />
-						<FollowRecommend />
+						<div className={style.rg_follow_recommend_con}>
+							<h3 className={style.rg_follow_title}>팔로우 추천</h3>
+							<FollowRecommend />
+							<FollowRecommend />
+							<FollowRecommend />
+						</div>
 					</section>
 				</div>
 			</div>

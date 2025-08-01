@@ -1,1 +1,42 @@
 @charset "utf-8";
+
+.follow_recommend_con {
+	display: flex;
+	padding: 0.8em;
+	align-items: center;
+	gap: 0.3em;
+}
+
+.user_logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.user_logo img {
+	border-radius: 50%;
+}
+
+.user_info {
+	flex: auto;
+}
+.user_name {
+	font-size: 0.95em;
+	font-weight: bold;
+}
+.user_id {
+	font-size: 0.8em;
+	color: #666;
+	font-weight: bold;
+	margin-top: 0.2em;
+}
+
+.user_follow_btn button {
+	background: #222;
+	color: #fff;
+	padding: 0.7em 1em 0.5em;
+	font-size: 0.88em;
+	border-radius: 10em;
+}
+.user_follow_btn button:hover {
+	background: #666;
+}

@@ -5,3 +5,8 @@ export const me = {
 	id: 'hotteok',
 	nickname: '호떡집사',
 };
+export const anonymous = {
+	image: dommyUser,
+	id: 'anonymous',
+	nickname: '유저A',
+};
