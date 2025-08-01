@@ -7,7 +7,7 @@ export const ColorMap = {
 	HOME: {
 		LINK: {
 			STABLE: 'transparent',
-			HOVER: '#efefef',
+			HOVER: '#f5f5f5',
 		},
 	},
 };

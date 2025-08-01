@@ -8,8 +8,8 @@ const Trend = () => {
 	const q = '트렌드';
 
 	return (
-		<Link href={`/search?q=${q}`} className={style.trend_list}>
-			<div className={style.trend_count}>실시간트렌드</div>
+		<Link href={`/search?q=${q}`} className={style.trend_elem}>
+			<div className={style.trend_sub_title}>실시간트렌드</div>
 			<div className={style.trend_title}>호떡집사</div>
 			<div className={style.trend_count}>1,234 posts</div>
 		</Link>

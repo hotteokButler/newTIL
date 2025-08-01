@@ -17,7 +17,7 @@
 	border-radius: 10em;
 }
 .fixed_menu_nav_elem a:hover {
-	background: #efefef;
+	background: #f5f5f5;
 }
 .fixed_menu_nav_elem a svg {
 	font-size: 1.2em;

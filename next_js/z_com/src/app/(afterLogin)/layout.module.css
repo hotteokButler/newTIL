@@ -39,11 +39,9 @@
 
 .main {
 	flex: auto;
-	background-color: azure;
 }
 .rg_section {
 	width: 18em;
-	background-color: aquamarine;
 }
 .rg_search_con {
 	margin-bottom: 4em;
