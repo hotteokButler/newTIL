@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 
+import Home from '@/app/(beforeLogin)/page';
 import { HomeTab } from '@/types/constant';
 
 import style from './tab.module.css';
@@ -24,11 +25,11 @@ const Tab = () => {
 			<ul className={style.home_tab}>
 				<li onClick={onClickRec}>
 					추천
-					<div className={style.home_tab_indicator} hidden={tab === HomeTab.Followers}></div>
+					<div className={style.home_tab_indicator} hidden={tab !== HomeTab.Followers}></div>
 				</li>
 				<li onClick={onClickFol}>
 					팔로우중
-					<div className={style.home_tab_indicator} hidden={tab === HomeTab.Following}></div>
+					<div className={style.home_tab_indicator} hidden={tab !== HomeTab.Following}></div>
 				</li>
 			</ul>
 		</div>
