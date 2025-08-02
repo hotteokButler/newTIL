@@ -2,7 +2,7 @@
 
 .follow_recommend_con {
 	display: flex;
-	padding: 0.8em;
+	padding: 0.5em;
 	align-items: center;
 	gap: 0.3em;
 }

@@ -1,5 +1,7 @@
 @charset "utf-8";
 
 :root {
-	--main-color: #009fff;
+	--main-color: #0096ff;
+	--section-bg: #f5f5f5;
+	--section-active-bg: #ededed;
 }

@@ -35,10 +35,12 @@
 	height: 100%;
 	width: 55em;
 	gap: 1em;
+	min-height: 100vh;
 }
 
 .main {
 	flex: auto;
+	height: 100%;
 }
 .rg_section {
 	width: 18em;
@@ -56,5 +58,5 @@
 }
 .rg_follow_title {
 	font-size: 1.3em;
-	padding: 0.8em 0.6em 0;
+	padding: 0.8em 0.6em 0.5em;
 }

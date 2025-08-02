@@ -20,7 +20,7 @@ const AfterLoginLayout = ({ children }: IProps) => {
 			</header>
 			<div className={style.main_rg_wrap}>
 				<div className={style.main_rg_inner}>
-					<main className={style.main}>rg main{children}</main>
+					<main className={style.main}>{children}</main>
 					<section className={style.rg_section}>
 						<div className={style.rg_search_con}>
 							<SearchBar />

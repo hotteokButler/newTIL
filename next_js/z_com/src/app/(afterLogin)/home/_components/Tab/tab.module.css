@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+.home_fixed_tab_wrap {
+	width: inherit;
+	position: sticky;
+	top: 0;
+	left: 0;
+	backdrop-filter: blur(4px);
+	background: rgba(255, 255, 255, 0.4);
+}
+.home_tab_text {
+	padding: 0.5em;
+	font-weight: 700;
+	font-size: 1.15em;
+}
+.home_tab {
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.home_tab li {
+	position: relative;
+	padding: 0.5em 0.5em 0.8em;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.95em;
+	cursor: pointer;
+}
+
+.home_tab_indicator {
+	width: 3em;
+	max-width: 50px;
+	height: 2px;
+	background: var(--main-color);
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
