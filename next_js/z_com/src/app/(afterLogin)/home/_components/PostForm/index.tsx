@@ -1,5 +1,7 @@
+'use client';
+
 const PostForm = () => {
-	return <div>PostForm</div>;
+	return <div></div>;
 };
 
 export default PostForm;
