@@ -2,7 +2,8 @@
 
 .post_form_wrap {
 	width: 100%;
-	padding: 1em;
+	padding: 1em 1em 0.5em;
+	border-bottom: 1px solid var(--border-color);
 }
 .post_form_con {
 	display: flex;
@@ -26,6 +27,9 @@
 	border: none;
 	resize: none;
 }
+.post_textarea::placeholder {
+	color: var(--placeholder-color);
+}
 .post_btn_con {
 	display: flex;
 	align-items: center;
@@ -39,9 +43,10 @@
 	border-radius: 50%;
 }
 .post_btn_con button:hover {
-	background: var(--section-active-bg);
+	background: var(--file-icon-bg);
 }
 .post_btn_con svg {
+	font-size: 1.2em;
 	color: var(--main-color);
 }
 .post_submit_btn {

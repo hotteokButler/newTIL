@@ -8,7 +8,7 @@
 	display: flex;
 	flex-direction: column;
 	margin-left: -0.5em;
-
+	border-right: 1px solid var(--border-color);
 	padding: 0.5em;
 }
 .fixed_menu_top {
