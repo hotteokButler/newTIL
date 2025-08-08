@@ -12,6 +12,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 
 import { target } from '@/dommy/dommy';
 
+import ActionBtns from '../ActionBtns';
 import style from './post.module.css';
 
 dayjs.locale('ko');
@@ -50,6 +51,7 @@ const Post = () => {
 							</div>
 						))}
 				</div>
+				<ActionBtns />
 			</div>
 		</article>
 	);
