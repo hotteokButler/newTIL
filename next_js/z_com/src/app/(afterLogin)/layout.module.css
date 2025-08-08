@@ -47,7 +47,6 @@
 .rg_section {
 	width: 18em;
 	flex: auto;
-	border-left: 1px solid var(--border-color);
 	padding-left: 1em;
 }
 

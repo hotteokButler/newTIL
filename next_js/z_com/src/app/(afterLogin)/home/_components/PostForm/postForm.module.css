@@ -4,6 +4,7 @@
 	width: 100%;
 	padding: 1em 1em 0.5em;
 	border-bottom: 1px solid var(--border-color);
+	border-right: 1px solid var(--border-color);
 }
 .post_form_con {
 	display: flex;

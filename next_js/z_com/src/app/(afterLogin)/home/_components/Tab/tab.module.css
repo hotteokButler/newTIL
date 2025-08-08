@@ -7,6 +7,7 @@
 	left: 0;
 	backdrop-filter: blur(4px);
 	background: rgba(255, 255, 255, 0.4);
+	border-right: 1px solid var(--border-color);
 }
 .home_tab_text {
 	padding: 0.5em;
