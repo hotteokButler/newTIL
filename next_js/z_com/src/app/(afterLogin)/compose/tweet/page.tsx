@@ -1,5 +1,7 @@
+import AfterLoginHome from '../../home/page';
+
 const Page = () => {
-	return <div>Page</div>;
+	return <AfterLoginHome />;
 };
 
 export default Page;

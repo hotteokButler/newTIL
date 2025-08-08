@@ -8,9 +8,10 @@ import style from './layout.module.css';
 
 interface IProps {
 	children: ReactNode;
+	modal: ReactNode;
 }
 
-const AfterLoginLayout = ({ children }: IProps) => {
+const AfterLoginLayout = ({ children, modal }: IProps) => {
 	return (
 		<div className={style.main_container}>
 			<header className={style.main_lf_wrap}>
@@ -35,6 +36,7 @@ const AfterLoginLayout = ({ children }: IProps) => {
 					</section>
 				</div>
 			</div>
+			{modal}
 		</div>
 	);
 };
