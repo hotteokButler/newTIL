@@ -21,30 +21,30 @@
 	font-size: 0.85em;
 	padding: 0.5em 0.1em 0.4em;
 }
-.action_comment:hover button,
-.action_comment.commented button {
+.action_comment:hover button {
 	background: var(--comment-icon-bg);
 	color: var(--main-color);
 }
 .action_comment:hover span,
+.action_comment.commented button,
 .action_comment.commented span {
 	color: var(--main-color);
 }
-.action_request:hover button,
-.action_request.requested button {
+.action_request:hover button {
 	background: var(--request-icon-bg);
 	color: var(--request-icon-txt);
 }
 .action_request:hover span,
+.action_request.requested button,
 .action_request.requested span {
 	color: var(--request-icon-txt);
 }
-.action_hit:hover button,
-.action_hit.hited button {
+.action_hit:hover button {
 	background: var(--hit-icon-bg);
 	color: var(--hit-icon-txt);
 }
 .action_hit:hover span,
+.action_hit.hited button,
 .action_hit.hited span {
 	color: var(--hit-icon-txt);
 }

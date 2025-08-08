@@ -19,19 +19,19 @@ const ActionBtns = () => {
 
 	return (
 		<div className={style.action_btn_wrap}>
-			<div className={cx(style.action_btn, style.action_comment, comment && style.action_commented)} onClick={onClickComment}>
+			<div className={cx(style.action_btn, style.action_comment, comment && style.commented)} onClick={onClickComment}>
 				<button type='button'>
 					<FaRegComment />
 				</button>
 				<span className={style.action_count}></span>
 			</div>
-			<div className={cx(style.action_btn, style.action_request, request && style.action_requested)} onClick={onClickRequest}>
+			<div className={cx(style.action_btn, style.action_request, request && style.requested)} onClick={onClickRequest}>
 				<button type='button'>
 					<FiRefreshCcw />
 				</button>
 				<span className={style.action_count}>1</span>
 			</div>
-			<div className={cx(style.action_btn, style.action_hit, hit && style.action_hited)} onClick={onClickHit}>
+			<div className={cx(style.action_btn, style.action_hit, hit && style.hited)} onClick={onClickHit}>
 				<button type='button'>
 					<FiHeart />
 				</button>
